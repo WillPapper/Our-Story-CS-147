@@ -15,6 +15,7 @@ class App extends React.Component {
           <Text>Stories</Text>
         </View>
         <ListViewHome></ListViewHome>
+        <OverlayIcons></OverlayIcons>
       </View>
     );
   }
