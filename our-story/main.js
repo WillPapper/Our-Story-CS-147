@@ -10,7 +10,10 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up main.js to start working on your app!</Text>
+        <View style={styles.header}>
+          <Text>Stories</Text>
+        </View>
+        <ListViewHome></ListViewHome>
       </View>
     );
   }
