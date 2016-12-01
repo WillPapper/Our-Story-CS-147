@@ -49,14 +49,11 @@ const styles = StyleSheet.create({
   },
   rowText: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   rowTitle: {
-    textAlign: 'left',
   },
   rowMiles: {
-    textAlign: 'right',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
   }
 });
 
