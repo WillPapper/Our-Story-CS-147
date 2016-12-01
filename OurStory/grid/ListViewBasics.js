@@ -27,8 +27,10 @@ export default class ListViewBasics extends Component {
             <View style={styles.row}>
               <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
               <View style={styles.rowText}>
-                <Text style={styles.rowTitle}>A Buddy System</Text>
-                <Text style={styles.rowMiles}>.1 miles</Text>
+                <Text style={styles.rowText}>A Buddy System</Text>
+                <View>
+                  <Text style={styles.rowText}>.1</Text><Text>{"\n"}</Text><Text style={styles.rowTextSmall}>miles</Text>
+                </View>
               </View>
               <Text>{rowData.titles}</Text>
             </View>}
@@ -51,10 +53,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  rowTitle: {
+  rowText: {
+    fontSize: 18,
+    color: '#4ECDC4',
   },
-  rowMiles: {
-  }
+  rowTextSmall: {
+    fontSize: 12,
+    color: '#4ECDC4',
+  },
 });
 
 // App registration and rendering
