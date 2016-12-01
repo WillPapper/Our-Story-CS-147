@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View } from 'react-native';
+import { AppRegistry, ListView, Text, View, StyleSheet } from 'react-native';
 
 export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
@@ -15,7 +15,7 @@ export default class ListViewBasics extends Component {
       miles
     });
     this.state = {
-      dataSource: ds.cloneWithRows(images, titles, miles)
+      dataSource: ds.cloneWithRows({images, titles, miles}, ['images', 'titles', 'miles'])
     };
   }
   render() {
@@ -23,12 +23,22 @@ export default class ListViewBasics extends Component {
       <View style={{flex: 1, paddingTop: 22}}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData}</Text>}
+          renderRow={(rowData) =>
+            <View style={styles.gridRow}>
+              <Text>Testing</Text>
+              <Text>{rowData.titles}</Text>
+            </View>}
         />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  gridRow: {
+    marginBottom: 5,
+  },
+});
 
 // App registration and rendering
 AppRegistry.registerComponent('ListViewBasics', () => ListViewBasics);
