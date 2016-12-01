@@ -5,10 +5,17 @@ export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    const names = ['John Test', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const images = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const titles = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const miles = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
+      sectionHeaderHasChanged : (s1, s2) => s1 !== s2,
+      images,
+      titles,
+      miles
+    });
     this.state = {
-      dataSource: ds.cloneWithRows(names)
+      dataSource: ds.cloneWithRows(images, titles, miles)
     };
   }
   render() {
