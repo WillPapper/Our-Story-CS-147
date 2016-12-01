@@ -45,7 +45,6 @@ export default class ListViewBasics extends Component {
 
 const styles = StyleSheet.create({
   row: {
-    marginBottom: 5,
     flex: 0,
     backgroundColor: '#293240'
   },
