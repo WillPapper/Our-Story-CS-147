@@ -25,7 +25,7 @@ export default class ListViewBasics extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
             <View style={styles.row}>
-              <Image source={{uri: 'https://lh5.googleusercontent.com/xvD9G5gPOA5WQszYANnowy6RcQLl9WHt0yZY8OlrHgP4kSZqpfi1_chOZ7dr9DqYa4wXV8E6QL0S_Aw=w1920-h1346-rw'}} style={styles.rowImage}/>
+              <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
               <View style={styles.rowText}>
                 <Text style={styles.rowTitle}>A Buddy System</Text>
                 <Text style={styles.rowMiles}>.1 miles</Text>
