@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View, StyleSheet, Image } from 'react-native';
+import { AppRegistry, ListView, Text, View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 
 export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
@@ -24,16 +24,19 @@ export default class ListViewBasics extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
-            <View style={styles.row}>
-              <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
-              <View style={styles.rowText}>
-                <Text style={styles.rowTextLarge}>A Buddy System</Text>
-                <View>
-                  <Text style={styles.rowTextLarge}>0.1</Text><Text style={styles.rowTextSmall}>miles</Text>
+            <TouchableHighlight onPress={this._onPressButton} underlayColor="#DDF8F9">
+              <View style={styles.row}>
+                <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
+                <View style={styles.rowText}>
+                  <Text style={styles.rowTextLarge}>A Buddy System</Text>
+                  <View>
+                    <Text style={styles.rowTextLarge}>0.1</Text><Text style={styles.rowTextSmall}>miles</Text>
+                  </View>
                 </View>
+                <Text>{rowData.titles}</Text>
               </View>
-              <Text>{rowData.titles}</Text>
-            </View>}
+            </TouchableHighlight>
+            }
         />
       </View>
     );
