@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View, StyleSheet } from 'react-native';
+import { AppRegistry, ListView, Text, View, StyleSheet, Image } from 'react-native';
 
 export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
@@ -24,8 +24,12 @@ export default class ListViewBasics extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
-            <View style={styles.gridRow}>
-              <Text>Testing</Text>
+            <View style={styles.row}>
+              <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}} style={styles.rowImage}/>
+              <View style={styles.rowText}>
+                <Text style={styles.rowTitle}>A Buddy System</Text>
+                <Text style={styles.rowMiles}>.1 miles</Text>
+              </View>
               <Text>{rowData.titles}</Text>
             </View>}
         />
@@ -35,9 +39,25 @@ export default class ListViewBasics extends Component {
 }
 
 const styles = StyleSheet.create({
-  gridRow: {
+  row: {
     marginBottom: 5,
+    flex: 0
   },
+  rowImage: {
+    width: 360,
+    height: 100,
+  },
+  rowText: {
+    flexDirection: 'row',
+  },
+  rowTitle: {
+    textAlign: 'left',
+  },
+  rowMiles: {
+    textAlign: 'right',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+  }
 });
 
 // App registration and rendering
