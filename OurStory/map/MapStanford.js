@@ -6,12 +6,10 @@ import {
   View
 } from 'react-native';
 
-export default class Map extends Component {
+export default class MapStanford extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Image></Image>
-      </View>
+      <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/map/image/map.png'}} style={styles.image}></Image>
     );
   }
 }
@@ -29,6 +27,11 @@ const styles = StyleSheet.create({
     flex: 0,
     backgroundColor: '#293240',
   },
+  image: {
+    width: 722,
+    height: 1066
+
+  }
 });
 
 AppRegistry.registerComponent('OurStory', () => OurStory);

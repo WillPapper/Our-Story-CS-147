@@ -12,6 +12,7 @@ import {
   View
 } from 'react-native';
 import ListViewHome from './grid/ListViewHome';
+import MapStanford from './map/MapStanford.js';
 
 export default class OurStory extends Component {
   render() {
@@ -24,6 +25,7 @@ export default class OurStory extends Component {
         </View>
         <View style={styles.body}>
           <ListViewHome></ListViewHome>
+          <MapStanford></MapStanford>
           {/*<OverlayIcons></OverlayIcons>*/}
         </View>
       </View>
