@@ -12,11 +12,8 @@ import {
   View
 } from 'react-native';
 import ListViewHome from './grid/ListViewHome';
-<<<<<<< HEAD
 import MapStanford from './map/MapStanford.js';
-=======
 import TabNavigator from './navigator/tabnavigator';
->>>>>>> origin/master
 
 export default class OurStory extends Component {
   render() {
@@ -29,12 +26,9 @@ export default class OurStory extends Component {
         </View>
         <View style={styles.body}>
           <ListViewHome></ListViewHome>
-<<<<<<< HEAD
           <MapStanford></MapStanford>
           {/*<OverlayIcons></OverlayIcons>*/}
-=======
-            <TabNavigator></TabNavigator>
->>>>>>> origin/master
+          <TabNavigator></TabNavigator>
         </View>
       </View>
     );
