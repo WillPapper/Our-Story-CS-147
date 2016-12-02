@@ -32,7 +32,6 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
 
-  [GMSServices provideAPIKey:@"key-goes-here"];
   return YES;
 }
 
