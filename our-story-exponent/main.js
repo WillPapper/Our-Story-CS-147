@@ -1,33 +1,31 @@
 import Exponent from 'exponent';
-import React from 'react';
-import ListViewHome from "grid-story";
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
 
-class App extends React.Component {
+// Check this out for guidance: https://github.com/yelled3/react-native-grid-example
+// Based on a ListView
+import React, { Component } from 'react';
+import { AppRegistry, ListView, Text, View } from 'react-native';
+
+class ListViewHome extends Component {
+  // Initialize the hardcoded data
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+      ])
+    };
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text>Stories</Text>
-        </View>
-        <ListViewHome></ListViewHome>
-        <OverlayIcons></OverlayIcons>
+      <View style={{flex: 1, paddingTop: 22}}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <Text>{rowData}</Text>}
+        />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-Exponent.registerRootComponent(App);
+Exponent.registerRootComponent(ListViewHome);
