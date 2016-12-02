@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import ListViewBasics from './grid/ListViewBasics';
+import ListViewHome from './grid/ListViewHome';
 
 export default class OurStory extends Component {
   render() {
@@ -23,7 +23,7 @@ export default class OurStory extends Component {
           </Text>
         </View>
         <View style={styles.body}>
-          <ListViewBasics></ListViewBasics>
+          <ListViewHome></ListViewHome>
           {/*<ListViewHome></ListViewHome>*/}
           {/*<OverlayIcons></OverlayIcons>*/}
         </View>

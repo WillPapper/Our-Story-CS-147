@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, ListView, Text, View, StyleSheet, Image, TouchableHighlight, Alert } from 'react-native';
 
-export default class ListViewBasics extends Component {
+export default class ListViewHome extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
 });
 
 // App registration and rendering
-AppRegistry.registerComponent('ListViewBasics', () => ListViewBasics);
+AppRegistry.registerComponent('ListViewHome', () => ListViewHome);
