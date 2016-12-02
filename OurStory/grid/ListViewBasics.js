@@ -5,9 +5,9 @@ export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const images = ['Images', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const titles = ['Titles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const miles = ['Miles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const images = ['https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const titles = ['A Buddy System', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const miles = ['0.1 miles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
       sectionHeaderHasChanged : (s1, s2) => s1 !== s2,
       images,
@@ -34,11 +34,11 @@ export default class ListViewBasics extends Component {
           renderRow={(rowData) =>
             <TouchableHighlight onPress={() => this.onPressButton(rowData.title)} underlayColor="#DDF8F9">
               <View style={styles.row}>
-                <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
+                <Image source={{uri: {rowData.image}}} style={styles.rowImage}/>
                 <View style={styles.rowText}>
-                  <Text style={styles.rowTextLarge}>A Buddy System</Text>
+                  <Text style={styles.rowTextLarge}>{rowData.title}</Text>
                   <View>
-                    <Text style={styles.rowTextLarge}>0.1</Text><Text style={styles.rowTextSmall}>miles</Text>
+                    <Text style={styles.rowTextLarge}>{rowData.miles}</Text><Text style={styles.rowTextSmall}>miles</Text>
                   </View>
                 </View>
                 <Text>{rowData.image}</Text>
