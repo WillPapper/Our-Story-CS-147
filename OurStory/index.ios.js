@@ -24,8 +24,8 @@ export default class OurStory extends Component {
           </Text>
         </View>
         <View style={styles.body}>
-          <ListViewHome></ListViewHome>
           <MapViewHome></MapViewHome>
+          {/*<ListViewHome style={styles.tempMargin}></ListViewHome>*/}
           {/*<OverlayIcons></OverlayIcons>*/}
         </View>
       </View>
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  tempMargin: {
+    marginTop: 200,
+  }
 });
 
 AppRegistry.registerComponent('OurStory', () => OurStory);
