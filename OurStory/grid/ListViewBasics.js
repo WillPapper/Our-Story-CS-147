@@ -5,17 +5,25 @@ export default class ListViewBasics extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const images = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const titles = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const miles = ['John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const images = ['Images', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const titles = ['Titles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const miles = ['Miles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
       sectionHeaderHasChanged : (s1, s2) => s1 !== s2,
       images,
       titles,
       miles
     });
+    let rows = [];
+    for (let i = 0; i < images.length; i++) {
+      rows.push({
+        image: images[i],
+        title: titles[i],
+        miles: miles[i],
+      });
+    }
     this.state = {
-      dataSource: ds.cloneWithRows({images, titles, miles}, ['images', 'titles', 'miles'])
+      dataSource: ds.cloneWithRows(rows)
     };
   }
   render() {
@@ -33,7 +41,9 @@ export default class ListViewBasics extends Component {
                     <Text style={styles.rowTextLarge}>0.1</Text><Text style={styles.rowTextSmall}>miles</Text>
                   </View>
                 </View>
-                <Text>{rowData.titles}</Text>
+                <Text>{rowData.image}</Text>
+                <Text>{rowData.title}</Text>
+                <Text>{rowData.miles}</Text>
               </View>
             </TouchableHighlight>
             }
