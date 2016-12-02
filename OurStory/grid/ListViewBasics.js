@@ -34,17 +34,13 @@ export default class ListViewBasics extends Component {
           renderRow={(rowData) =>
             <TouchableHighlight onPress={() => this.onPressButton(rowData.title)} underlayColor="#DDF8F9">
               <View style={styles.row}>
-                <Text>{rowdata.Image}</Text>
-                <Image source={{uri: require({rowData.image})}} style={styles.rowImage}/>
+                <Image source={{uri: rowData.image}} style={styles.rowImage}/>
                 <View style={styles.rowText}>
                   <Text style={styles.rowTextLarge}>{rowData.title}</Text>
                   <View>
                     <Text style={styles.rowTextLarge}>{rowData.miles}</Text><Text style={styles.rowTextSmall}>miles</Text>
                   </View>
                 </View>
-                <Text>{rowData.image}</Text>
-                <Text>{rowData.title}</Text>
-                <Text>{rowData.miles}</Text>
               </View>
             </TouchableHighlight>
             }
