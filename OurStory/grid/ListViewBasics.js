@@ -32,7 +32,7 @@ export default class ListViewBasics extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
-            <TouchableHighlight onPress={this.onPressButton} underlayColor="#DDF8F9">
+            <TouchableHighlight onPress={() => this.onPressButton(rowData.title)} underlayColor="#DDF8F9">
               <View style={styles.row}>
                 <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg'}} style={styles.rowImage}/>
                 <View style={styles.rowText}>
@@ -51,8 +51,8 @@ export default class ListViewBasics extends Component {
       </View>
     );
   }
-  onPressButton() {
-    Alert.alert('Grid item clicked', 'Click this to dismiss');
+  onPressButton(title) {
+    Alert.alert('Grid item clicked', title);
   }
 }
 
