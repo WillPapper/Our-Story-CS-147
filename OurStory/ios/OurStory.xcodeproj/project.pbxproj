@@ -93,6 +93,20 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		3D387A981DF1627500EA7F3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D387A931DF1627400EA7F3F /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D4E87F5363B2EB54849867E44613A3E1;
+			remoteInfo = "Pods-OurStory";
+		};
+		3D387A9A1DF1627500EA7F3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D387A931DF1627400EA7F3F /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C9D12940851A27E30E8CE52BC0258967;
+			remoteInfo = React;
+		};
 		3DDA12EA1DF144F700798975 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0427A8A6F57D437DA868D68C /* AirMaps.xcodeproj */;
@@ -188,6 +202,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		3D387A8F1DF15DF100EA7F3F /* AirGoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AirGoogleMaps; path = "../node_modules/react-native-maps/ios/AirGoogleMaps"; sourceTree = "<group>"; };
 		3D387A911DF15DFE00EA7F3F /* AirMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AirMaps; path = "../node_modules/react-native-maps/ios/AirGoogleMaps/AirMaps"; sourceTree = "<group>"; };
+		3D387A931DF1627400EA7F3F /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		3D7D032B249CD949402D4561 /* Pods_OurStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E25CD2A6659911A0BF48A6 /* Pods-OurStory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurStory.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-OurStory/Pods-OurStory.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -335,6 +350,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3D387A941DF1627400EA7F3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D387A991DF1627500EA7F3F /* Pods_OurStory.framework */,
+				3D387A9B1DF1627500EA7F3F /* React.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3DDA12E71DF144F700798975 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +379,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3D387A931DF1627400EA7F3F /* Pods.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -490,6 +515,10 @@
 					ProjectRef = 0427A8A6F57D437DA868D68C /* AirMaps.xcodeproj */;
 				},
 				{
+					ProductGroup = 3D387A941DF1627400EA7F3F /* Products */;
+					ProjectRef = 3D387A931DF1627400EA7F3F /* Pods.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -593,6 +622,20 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D387A991DF1627500EA7F3F /* Pods_OurStory.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_OurStory.framework;
+			remoteRef = 3D387A981DF1627500EA7F3F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D387A9B1DF1627500EA7F3F /* React.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = React.framework;
+			remoteRef = 3D387A9A1DF1627500EA7F3F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DDA12EB1DF144F700798975 /* libAirMaps.a */ = {
