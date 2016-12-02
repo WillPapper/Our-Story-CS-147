@@ -20,11 +20,11 @@ export default class OurStory extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>
-            Our Story - STORIES
+            Stories
           </Text>
         </View>
         <View style={styles.body}>
-          <MapViewHome></MapViewHome>
+          {/*<MapViewHome></MapViewHome>*/}
           <ListViewHome></ListViewHome>
           {/*<OverlayIcons></OverlayIcons>*/}
         </View>
@@ -48,11 +48,10 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: 'left',
     margin: 10,
     marginTop: 80,
     color: '#4ECDC4',
-    fontWeight: 'bold',
   },
   instructions: {
     textAlign: 'center',
