@@ -3,7 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   Image,
-  View
+  View,
 } from 'react-native';
 
 export default class MapStanford extends Component {
@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#293240',
   },
   image: {
-    width: 722,
-    height: 1066
-
-  }
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'contain'
+  },
 });
 
 AppRegistry.registerComponent('OurStory', () => OurStory);
