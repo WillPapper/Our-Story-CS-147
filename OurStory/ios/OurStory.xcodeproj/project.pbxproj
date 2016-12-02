@@ -22,8 +22,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		3D387A901DF15DF100EA7F3F /* AirGoogleMaps in Resources */ = {isa = PBXBuildFile; fileRef = 3D387A8F1DF15DF100EA7F3F /* AirGoogleMaps */; };
-		3D387A921DF15DFE00EA7F3F /* AirMaps in Resources */ = {isa = PBXBuildFile; fileRef = 3D387A911DF15DFE00EA7F3F /* AirMaps */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		D4389E93E7A523561CED9B51 /* Pods_OurStory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D032B249CD949402D4561 /* Pods_OurStory.framework */; };
 		E99EDC44CDCD4372B89B579E /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5666C7C7E249A881683CB7 /* libAirMaps.a */; };
@@ -200,8 +198,6 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OurStory/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OurStory/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		3D387A8F1DF15DF100EA7F3F /* AirGoogleMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AirGoogleMaps; path = "../node_modules/react-native-maps/ios/AirGoogleMaps"; sourceTree = "<group>"; };
-		3D387A911DF15DFE00EA7F3F /* AirMaps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AirMaps; path = "../node_modules/react-native-maps/ios/AirGoogleMaps/AirMaps"; sourceTree = "<group>"; };
 		3D387A931DF1627400EA7F3F /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		3D7D032B249CD949402D4561 /* Pods_OurStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E25CD2A6659911A0BF48A6 /* Pods-OurStory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurStory.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-OurStory/Pods-OurStory.debug.xcconfig"; sourceTree = "<group>"; };
@@ -407,8 +403,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				3D387A911DF15DFE00EA7F3F /* AirMaps */,
-				3D387A8F1DF15DF100EA7F3F /* AirGoogleMaps */,
 				13B07FAE1A68108700A75B9A /* OurStory */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* OurStoryTests */,
@@ -722,8 +716,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D387A921DF15DFE00EA7F3F /* AirMaps in Resources */,
-				3D387A901DF15DF100EA7F3F /* AirGoogleMaps in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

@@ -12,9 +12,6 @@ import {
   View
 } from 'react-native';
 import ListViewHome from './grid/ListViewHome';
-import MapViewHome from './map/MapViewHome';
-import MapViewAnimatedMarkers from './map/MapViewAnimatedMarkers';
-import MapViewFitToSuppliedMarkers from './map/MapViewFitToSuppliedMarkers';
 
 export default class OurStory extends Component {
   render() {
@@ -30,7 +27,6 @@ export default class OurStory extends Component {
           {/*<OverlayIcons></OverlayIcons>*/}
         </View>
       </View>
-      {/*<MapViewFitToSuppliedMarkers></MapViewFitToSuppliedMarkers>*/}
     );
   }
 }
