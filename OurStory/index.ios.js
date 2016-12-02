@@ -19,7 +19,7 @@ export default class OurStory extends Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>
-            Our Story - Stories
+            Our Story - STORIES
           </Text>
         </View>
         <View style={styles.body}>
@@ -39,12 +39,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   header: {
-    marginTop: 30
+    width: 360,
+    marginTop: 0,
+    flex: 0,
+    backgroundColor: '#293240',
   },
   headerText: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    marginTop: 80,
+    color: '#4ECDC4',
+    fontWeight: 'bold',
   },
   instructions: {
     textAlign: 'center',

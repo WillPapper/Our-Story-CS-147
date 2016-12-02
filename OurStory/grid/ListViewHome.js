@@ -28,7 +28,7 @@ export default class ListViewHome extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1, paddingTop: 22}}>
+      <View style={{flex: 1, paddingTop: 0}}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
@@ -67,10 +67,13 @@ const styles = StyleSheet.create({
     marginRight: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
+
   },
   rowTextLarge: {
     fontSize: 18,
     color: '#4ECDC4',
+
+
   },
   rowTextSmall: {
     fontSize: 12,
