@@ -70,8 +70,10 @@ const styles = StyleSheet.create({
 
   },
   rowTextLarge: {
+    flex: 1,
     fontSize: 18,
     color: '#4ECDC4',
+    alignItems: 'center',
 
 
   },
