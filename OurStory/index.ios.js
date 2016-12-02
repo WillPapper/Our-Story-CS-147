@@ -25,8 +25,8 @@ export default class OurStory extends Component {
         </View>
         <View style={styles.body}>
           <ListViewHome></ListViewHome>
+          <MapViewHome></MapViewHome>
           {/*<OverlayIcons></OverlayIcons>*/}
-          {/*<MapViewHome></MapViewHome>*/}
         </View>
       </View>
     );
