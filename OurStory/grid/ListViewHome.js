@@ -5,9 +5,9 @@ export default class ListViewHome extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const images = ['https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const titles = ['A Buddy System', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
-    const miles = ['0.1 miles', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin']
+    const images = ['https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/pexels-photo-147460.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/viewing.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/home-portrait-bw-eva.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/grid/images/faces/pexels-photo-58020.jpg']
+    const titles = ['A Buddy System', 'Fueling My Campus', 'Me', 'What I Saw']
+    const miles = ['0.1', '0.3', '0.4', '0.6']
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
       sectionHeaderHasChanged : (s1, s2) => s1 !== s2,
       images,
