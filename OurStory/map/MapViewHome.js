@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import MapView from 'react-native-maps';
 
-class MapViewHome extends Component {
+export default class MapViewHome extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
