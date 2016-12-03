@@ -1,3 +1,4 @@
+{/*
 import TabNavigator from 'react-native-tab-navigator';
 
 export default class TabNavigator extends Component {
@@ -25,3 +26,4 @@ export default class TabNavigator extends Component {
 		</TabNavigator>
 	}
 }
+*/}

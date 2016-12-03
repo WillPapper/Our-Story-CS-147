@@ -25,10 +25,10 @@ export default class OurStory extends Component {
           </Text>
         </View>
         <View style={styles.body}>
-          <ListViewHome></ListViewHome>
           <MapStanford></MapStanford>
+          <ListViewHome></ListViewHome>
           {/*<OverlayIcons></OverlayIcons>*/}
-          <TabNavigator></TabNavigator>
+          {/*<TabNavigator></TabNavigator>*/}
         </View>
       </View>
     );
