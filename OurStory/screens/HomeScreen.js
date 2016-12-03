@@ -11,9 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
-import ListViewHome from './grid/ListViewHome';
-import MapStanford from './map/MapStanford.js';
-import TabNavigator from './navigator/tabnavigator';
+import ListViewHome from './ListViewHome';
+import MapStanford from './MapStanford';
 
 export default class Home extends Component {
   render() {
