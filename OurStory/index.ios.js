@@ -1,7 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 
 import { Home } from './home.ios.js';
-import { Map } from './map/MapStanford.ios.js';
+import { Map } from './map/MapStanford.js';
 
 // this is where you register all of your app's screens
 export function registerScreens() {
