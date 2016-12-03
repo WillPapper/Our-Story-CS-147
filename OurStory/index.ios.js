@@ -1,68 +1,30 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import { Navigation } from 'react-native-navigation';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import ListViewHome from './grid/ListViewHome';
-import MapStanford from './map/MapStanford.js';
-import TabNavigator from './navigator/tabnavigator';
+import { Home } from './home.ios.js';
+import { Map } from './map/MapStanford.ios.js';
 
-export default class OurStory extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>
-            Stories
-          </Text>
-        </View>
-        <View style={styles.body}>
-          <MapStanford></MapStanford>
-          <ListViewHome></ListViewHome>
-          {/*<OverlayIcons></OverlayIcons>*/}
-          {/*<TabNavigator></TabNavigator>*/}
-        </View>
-      </View>
-    );
-  }
+// this is where you register all of your app's screens
+export function registerScreens() {
+  Navigation.registerComponent('OurStory.Home', () => FirstTabScreen);
+  Navigation.registerComponent('OurStory.MapStanford', () => MapStanford );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  header: {
-    width: 360,
-    marginTop: 0,
-    flex: 0,
-    backgroundColor: '#293240',
-  },
-  headerText: {
-    fontSize: 20,
-    textAlign: 'left',
-    margin: 10,
-    marginTop: 80,
-    color: '#4ECDC4',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  tempMargin: {
-    marginTop: 200,
-  }
+// start the app
+Navigation.startTabBasedApp({
+  tabs: [
+    {
+      label: 'Home',
+      screen: 'OurStory.Home', // this is a registered name for a screen
+      icon: require('./assets/icons/Home.png'),
+      selectedIcon: require('./assets/icons/Home_Active.png'), // iOS only
+      title: 'Home'
+    },
+    {
+      label: 'Map',
+      screen: 'OurStory.MapStanford',
+      icon: require('./assets/icons/Map.png'),
+      selectedIcon: require('./assets/icons/Map_Active.png'), // iOS only
+      title: 'Map'
+    }
+  ]
 });
-
-AppRegistry.registerComponent('OurStory', () => OurStory);
