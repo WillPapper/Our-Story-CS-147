@@ -12,7 +12,7 @@ export function registerScreens() {
 
 registerScreens();
 
-static navigatorStyleDefinition = {
+navigatorStyleDefinition = {
   drawUnderNavBar: true,
   navBarTranslucent: true
 };
