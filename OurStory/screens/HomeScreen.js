@@ -24,10 +24,7 @@ export default class Home extends Component {
           </Text>
         </View>
         <View style={styles.body}>
-          <MapStanford></MapStanford>
           <ListViewHome></ListViewHome>
-          {/*<OverlayIcons></OverlayIcons>*/}
-          {/*<TabNavigator></TabNavigator>*/}
         </View>
       </View>
     );
