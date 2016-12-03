@@ -1,13 +1,15 @@
 import { Navigation } from 'react-native-navigation';
 
 import { Home } from './home.ios.js';
-import { Map } from './map/MapStanford.js';
+import { MapStanford } from './map/MapStanford.js';
 
 // this is where you register all of your app's screens
 export function registerScreens() {
-  Navigation.registerComponent('OurStory.Home', () => FirstTabScreen);
+  Navigation.registerComponent('OurStory.Home', () => Home);
   Navigation.registerComponent('OurStory.MapStanford', () => MapStanford );
 }
+
+registerScreens();
 
 // start the app
 Navigation.startTabBasedApp({
