@@ -11,7 +11,6 @@
     "react-native": "^0.38.0",
     "react-native-maps": "^0.11.0",
     "react-native-navigation": "^2.0.0-experimental.151",
-    "react-native-tab-navigator": "^0.3.3",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0"
   },
