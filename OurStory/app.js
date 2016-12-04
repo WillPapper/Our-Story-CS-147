@@ -30,5 +30,13 @@ Navigation.startTabBasedApp({
       title: 'Map',
       navigatorStyle: navigatorStyleDefinition,
     },
+    {
+      label: 'Record',
+      screen: 'ourstory.RecordVideo',
+      icon: require('./assets/icons/Map.png'),
+      selectedIcon: require('./assets/icons/Map_Active.png'), // iOS only
+      title: 'Record',
+      navigatorStyle: navigatorStyleDefinition,
+    },
   ]
 });
