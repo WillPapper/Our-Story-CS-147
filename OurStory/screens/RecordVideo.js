@@ -20,7 +20,7 @@ export default class RecordVideo extends Component {
           }}
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
-          type={Camera.constants.front}>
+          type={Camera.constants.Type.front}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
         </Camera>
       </View>
