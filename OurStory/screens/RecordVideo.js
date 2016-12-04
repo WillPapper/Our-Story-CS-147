@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 
-class RecordVideo extends Component {
+export default class RecordVideo extends Component {
   render() {
     return (
       <View style={styles.container}>
