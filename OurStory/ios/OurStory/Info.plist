@@ -6,6 +6,8 @@
 	<string>Our Story needs access to your camera to record your story!</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Our Story needs access to your microphone to record your story!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Our Story needs access to your photo library to record your story!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
