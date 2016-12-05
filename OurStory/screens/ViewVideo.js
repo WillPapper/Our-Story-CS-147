@@ -4,6 +4,7 @@ import {
   StyleSheet,
   View,
   Image,
+  TouchableHighlight,
 } from 'react-native';
 import Video from 'react-native-video';
 
@@ -35,14 +36,34 @@ export default class ViewVideo extends Component {
                style={styles.backgroundVideo} />
            <View style={styles.snapBar}>
              {/* Info button */}
-             <Image source={require("../assets/icons/Home.png")}></Image>
+             <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
+               <Image source={require("../assets/icons/Home.png")}></Image>
+             </TouchableHighlight>
              {/* Pause button */}
-             <Image source={require("../assets/icons/Home.png")}></Image>
+             <TouchableHighlight onPress={() => this.pauseVideo()} underlayColor="#DDF8F9">
+               <Image source={require("../assets/icons/Home.png")}></Image>
+             </TouchableHighlight>
              {/* Snap button */}
-             <Image source={require("../assets/icons/Home.png")}></Image>
+             <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
+               <Image source={require("../assets/icons/Home.png")}></Image>
+             </TouchableHighlight>
           </View>
         </View>
     );
+  }
+
+  showSnapInfo() {
+    // Toggle visibility of the styles
+    // Check this as an example: https://stackoverflow.com/questions/32347605/change-button-color-onpress-toggle-functionality-react-native
+    console.log("TEST");
+  }
+
+  pauseVideo() {
+
+  }
+
+  snap() {
+
   }
 }
 
