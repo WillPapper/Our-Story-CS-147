@@ -16,6 +16,8 @@ import MapStanford from './MapStanford';
 
 export default class Home extends Component {
   render() {
+    console.log("home navigator")
+    console.log(this.props.navigator)
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -24,7 +26,10 @@ export default class Home extends Component {
           </Text>
         </View>
         <View style={styles.body}>
-          <ListViewHome></ListViewHome>
+          <ListViewHome
+            parentNavigator={this.props.navigator}
+            >
+          </ListViewHome>
         </View>
       </View>
     );

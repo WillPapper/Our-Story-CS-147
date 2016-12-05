@@ -25,6 +25,8 @@ export default class ListViewHome extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(rows)
     };
+    console.log("ListView navigator")
+    console.log(this.props.parentNavigator)
   }
   render() {
     return (
@@ -50,6 +52,10 @@ export default class ListViewHome extends Component {
   }
   onPressButton(title) {
     Alert.alert('Grid item clicked', title);
+    this.props.parentNavigator.push({
+      screen: 'ourstory.ViewVideo',
+      title: 'Video'
+    })
   }
 }
 
