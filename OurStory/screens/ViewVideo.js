@@ -20,7 +20,7 @@ export default class ViewVideo extends Component {
              muted={false}                  // Mutes the audio entirely.
              paused={false}                 // Pauses playback entirely.
              resizeMode="cover"             // Fill the whole screen at aspect ratio.
-             repeat={true}                  // Repeat forever.
+             repeat={false}                  // Repeat forever.
              playInBackground={false}       // Audio continues to play when app entering background.
              playWhenInactive={false}       // [iOS] Video continues to play when control or notification center are shown.
              progressUpdateInterval={250.0} // [iOS] Interval to fire onProgress (default to ~250ms)
