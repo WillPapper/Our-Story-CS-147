@@ -32,6 +32,9 @@ export default class RecordVideo extends Component {
       .then((data) => console.log(data))
       .catch(err => console.error(err));
   }
+  // Use the photo as a thumbnail
+  // Set a timer to simulate the record time and place the timer in the top menu bar
+  // TimeAgo will work probably. Set the timestamp in TimeAgo to the time of the button press: https://www.npmjs.com/package/react-native-timeago
 }
 
 const styles = StyleSheet.create({
