@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+} from 'react-native';
+import { Video } from 'react-native-video';
 
 export default class ViewVideo extends Component {
   render() {
     return (
-      <Video source={{uri: 'https://doc-0s-5o-docs.googleusercontent.com/docs/securesc/ifhot9j0bnq51t1kdo02lntvau0ng1rm/04k9ifk3j28utjcto0selsojbe8uh4of/1480816800000/14132123247478813179/11356378469260161532/0B4_8jxNJHJhoQm1Va0tyT0k1bVU?e=download&nonce=0qqkcbt8c4o56&user=11356378469260161532&hash=al9smqgumcs65vuoh6bvpoa81om1de01'}}   // Can be a URL or a local file.
+      <Video source={require('../assets/videos/example-story.mp4')}   // Can be a URL or a local file.
              ref={(ref) => {
-               this.player = ref
+              this.player = ref
+              // Later to trigger fullscreen
+              this.player.presentFullscreenPlayer()
+              // To set video position in seconds (seek)
+              this.player.seek(0)
              }}                             // Store reference
              rate={1.0}                     // 0 is paused, 1 is normal.
              volume={1.0}                   // 0 is muted, 1 is normal.
@@ -26,13 +35,6 @@ export default class ViewVideo extends Component {
   }
 }
 
-
-// Later to trigger fullscreen
-this.player.presentFullscreenPlayer()
-
-// To set video position in seconds (seek)
-this.player.seek(0)
-
 var styles = StyleSheet.create({
   backgroundVideo: {
     position: 'absolute',
@@ -42,3 +44,5 @@ var styles = StyleSheet.create({
     right: 0,
   },
 });
+
+AppRegistry.registerComponent('ViewVideo', () => ViewVideo);
