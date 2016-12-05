@@ -51,10 +51,9 @@ export default class ListViewHome extends Component {
     );
   }
   onPressButton(title) {
-    Alert.alert('Grid item clicked', title);
     this.props.parentNavigator.push({
       screen: 'ourstory.ViewVideo',
-      title: 'Video'
+      title: 'Video',
     })
   }
 }
