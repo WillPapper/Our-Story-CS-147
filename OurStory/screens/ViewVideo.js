@@ -3,12 +3,12 @@ import {
   AppRegistry,
   StyleSheet,
 } from 'react-native';
-import { Video } from 'react-native-video';
+import Video from 'react-native-video';
 
 export default class ViewVideo extends Component {
   render() {
     return (
-      <Video source={require('../assets/videos/example-story.mp4')}   // Can be a URL or a local file.
+      <Video source={require('../assets/videos/example-story.mp4')}
              ref={(ref) => {
               this.player = ref
               // Later to trigger fullscreen
