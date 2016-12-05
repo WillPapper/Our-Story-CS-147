@@ -12,7 +12,6 @@ export default class ViewVideo extends Component {
              ref={(ref) => {
               this.player = ref
               // Later to trigger fullscreen
-              this.player.presentFullscreenPlayer()
               // To set video position in seconds (seek)
               this.player.seek(0)
              }}                             // Store reference
