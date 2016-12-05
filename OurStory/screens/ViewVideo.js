@@ -13,7 +13,7 @@ export default class ViewVideo extends Component {
               this.player = ref
               // Later to trigger fullscreen
               // To set video position in seconds (seek)
-              this.player.seek(0)
+              // this.player.seek(0)
              }}                             // Store reference
              rate={1.0}                     // 0 is paused, 1 is normal.
              volume={1.0}                   // 0 is muted, 1 is normal.
