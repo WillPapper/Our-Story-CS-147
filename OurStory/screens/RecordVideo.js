@@ -6,7 +6,8 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  View
+  View,
+  TextInput
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -23,6 +24,10 @@ export default class RecordVideo extends Component {
           type={Camera.constants.Type.front}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
         </Camera>
+        <View style={styles.teleprompterContainer}>
+          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
+          </TextInput>
+        </View>
       </View>
     );
   }
@@ -55,6 +60,9 @@ const styles = StyleSheet.create({
     color: '#000',
     padding: 10,
     margin: 40
+  },
+  teleprompter: {
+    height: 40
   }
 });
 
