@@ -5,6 +5,7 @@ import {
   View,
   Image,
   TouchableHighlight,
+  Text
 } from 'react-native';
 import Video from 'react-native-video';
 
@@ -70,7 +71,8 @@ export default class ViewVideo extends Component {
     // Check this as an example: https://stackoverflow.com/questions/32347605/change-button-color-onpress-toggle-functionality-react-native
     // Code drawn from: https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react-js
     console.log("showSnapInfo " + this.state.showSnapInfo);
-    this.state.showSnapInfo = !this.state.showSnapInfo;
+    oppositeState = !this.state.showSnapInfo;
+    this.setState({showSnapInfo: oppositeState});
   }
 
   pauseVideo() {
