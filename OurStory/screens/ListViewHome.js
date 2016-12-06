@@ -55,6 +55,7 @@ export default class ListViewHome extends Component {
     this.props.parentNavigator.push({
       screen: 'ourstory.ViewVideo',
       title: title,
+      navigatorStyle: viewerNavigatorStyleDefinition,
     })
   }
 }

@@ -17,6 +17,12 @@ navigatorStyleDefinition = {
   navBarBackgroundColor: '#19202b',
 };
 
+viewerNavigatorStyleDefinition = {
+  navBarTextColor: '#4ECDC4',
+  navBarBackgroundColor: '#19202b',
+  navBarButtonColor: '#4ECDC4',
+};
+
 // start the app
 console.log("LOOGGING NAVIGATION RESULTS")
 console.log(Navigation);

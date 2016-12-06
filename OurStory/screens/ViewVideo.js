@@ -48,12 +48,13 @@ export default class ViewVideo extends Component {
              {/* Close video button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
              <View>
                <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
-                 <Image source={require("../assets/icons/Map.png")}></Image>
+                 <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
+
                </TouchableHighlight>
              </View>
              {/* Info button */}
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
-               <Image source={require("../assets/icons/Home.png")}></Image>
+               <Image source={require("../assets/icons/Snap.png")}style={styles.snapImage}></Image>
              </TouchableHighlight>
              {this.state.showSnapInfo &&
                <View>
@@ -65,10 +66,10 @@ export default class ViewVideo extends Component {
              <TouchableHighlight onPress={() => this.pauseVideo()} underlayColor="#DDF8F9">
                <View>
                  {this.state.videoPaused &&
-                   <Image source={require("../assets/icons/Home.png")}></Image>
+                   <Image source={require("../assets/icons/Play.png")}style={styles.pauseImage}></Image>
                  }
                  {!this.state.videoPaused &&
-                   <Image source={require("../assets/icons/Home_Active.png")}></Image>
+                   <Image source={require("../assets/icons/PauseVideo.png")}style={styles.pauseImage}></Image>
                  }
              </View>
              </TouchableHighlight>
@@ -76,7 +77,7 @@ export default class ViewVideo extends Component {
              <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
                <View>
                  {!this.state.showSnap &&
-                   <Image source={require("../assets/icons/Home.png")}></Image>
+                   <Image source={require("../assets/icons/Info.png")}style={styles.infoImage}></Image>
                  }
                  {this.state.showSnap &&
                    <View>
@@ -129,6 +130,34 @@ var styles = StyleSheet.create({
   container: {
 
   },
+
+  xImage: {
+    position: 'absolute',
+    top: -550,
+    bottom: 0,
+    left: 355,
+  },
+
+  snapImage: {
+    position: 'absolute',
+    top: -63,
+    left: 340,
+  },
+
+  pauseImage: {
+    position: 'absolute',
+    top: -60,
+
+    left: 175,
+  },
+
+  infoImage: {
+    position: 'absolute',
+    top: -60,
+
+    left: 0,
+  },
+
   backgroundVideo: {
     position: 'absolute',
     top: 0,
@@ -137,7 +166,7 @@ var styles = StyleSheet.create({
     right: 0,
   },
   snapBar: {
-
+    marginTop: 560,
   },
 });
 
