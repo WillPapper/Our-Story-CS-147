@@ -46,7 +46,7 @@ export default class ViewVideo extends Component {
                style={styles.backgroundVideo} />
            <View style={styles.snapBar}>
              {/* Close video button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
-             <View>
+             <View style={styles.closeVideo}>
                <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
                  <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
 
@@ -169,6 +169,9 @@ var styles = StyleSheet.create({
   snapBar: {
     marginTop: 560,
   },
+  closeVideo: {
+
+  }
 });
 
 AppRegistry.registerComponent('ViewVideo', () => ViewVideo);
