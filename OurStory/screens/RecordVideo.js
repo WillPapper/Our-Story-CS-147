@@ -22,6 +22,7 @@ export default class RecordVideo extends Component {
       currentTimeDisplay: "00:00:00",
       showTeleprompter: false,
       recording: false,
+      publish: false,
     };
   }
   render() {
@@ -55,16 +56,31 @@ export default class RecordVideo extends Component {
          }
                    <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CA]</Text>
         </Camera>
+       {/* Publish screen */}
+       {this.state.publish &&
+        <View style={styles.publishContainer}>
+         <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
+           <Image source={require("../assets/icons/Compose.png")}style={styles.publishButton}></Image>
+         </TouchableHighlight>
+          <TextInput style={styles.publishInput} placeholder={"Title"} onChangeText={(text) => this.setState({text})}>
+          </TextInput>
+        </View>
+       }
       </View>
     );
   }
 
   takePicture() {
-    this.camera.capture()
-      .then((data) => console.log(data))
-      .catch(err => console.error(err));
-    this.updateTimer();
-    this.state.recording = true;
+    if (!this.state.recording) {
+      this.camera.capture()
+        .then((data) => console.log(data))
+        .catch(err => console.error(err));
+      this.updateTimer();
+      this.state.recording = true;
+    }
+    else if (this.state.recording) {
+      this.setState({publish: true})
+    }
   }
   updateTimer() {
     // TODO: Make the timer stop when recording stops
@@ -93,7 +109,9 @@ export default class RecordVideo extends Component {
         else {
           currentTimeDisplay += ":" + currentTimeSeconds;
         }
-        this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeMinutes: currentTimeMinutes});
+        if (this.state.publish == false) {
+          this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeMinutes: currentTimeMinutes});
+        }
       },
       1000
     );
@@ -103,9 +121,12 @@ export default class RecordVideo extends Component {
     var oppositeState = !this.state.showTeleprompter;
     this.setState({showTeleprompter: oppositeState});
   }
-  // Use the photo as a thumbnail
-  // Set a timer to simulate the record time and place the timer in the top menu bar
-  // TimeAgo will work probably. Set the timestamp in TimeAgo to the time of the button press: https://www.npmjs.com/package/react-native-timeago
+
+  publish() {
+    this.props.navigator.switchToTab({
+      tabIndex: 0
+    });
+  }
 }
 
 const styles = StyleSheet.create({
@@ -159,6 +180,16 @@ const styles = StyleSheet.create({
 
       backgroundColor: '#293240',
       opacity: 0.2,
+  },
+
+  publishContainer: {
+
+  },
+  publishButton: {
+
+  },
+  publishInput: {
+
   }
 });
 
