@@ -7,14 +7,38 @@ import {
   Text,
   TouchableHighlight,
   View,
-  TextInput
+  TextInput,
+  Image,
 } from 'react-native';
 import Camera from 'react-native-camera';
 
 export default class RecordVideo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTimeHours: "00",
+      currentTimeMinutes: 0,
+      currentTimeSeconds: 0,
+      currentTimeDisplay: "00:00:00",
+      showTeleprompter: false,
+      recording: false,
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
+        <Text>{this.state.currentTimeDisplay}</Text>
+       {/* Teleprompter button */}
+       <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
+         <Image source={require("../assets/icons/Home.png")}></Image>
+       </TouchableHighlight>
+       {this.state.showTeleprompter &&
+        <View style={styles.teleprompterContainer}>
+          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
+          </TextInput>
+        </View>
+       }
+       {/* Recording button -- replace the text with the image and make it visible */}
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -23,11 +47,13 @@ export default class RecordVideo extends Component {
           aspect={Camera.constants.Aspect.fill}
           type={Camera.constants.Type.front}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+         {this.state.recording &&
+           <Image source={require("../assets/icons/Home.png")}></Image>
+         }
+         {!this.state.recording &&
+           <Image source={require("../assets/icons/Home_Active.png")}></Image>
+         }
         </Camera>
-        <View style={styles.teleprompterContainer}>
-          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
-          </TextInput>
-        </View>
       </View>
     );
   }
@@ -36,6 +62,45 @@ export default class RecordVideo extends Component {
     this.camera.capture()
       .then((data) => console.log(data))
       .catch(err => console.error(err));
+    this.updateTimer();
+    this.state.recording = true;
+  }
+  updateTimer() {
+    // TODO: Make the timer stop when recording stops
+    setInterval(
+      () => {
+        var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
+        var currentTimeMinutes = Number.parseInt(this.state.currentTimeMinutes, 10);
+        var currentTimeHours = this.state.currentTimeHours;
+        var currentTimeDisplay = "" + this.state.currentTimeHours;
+        if (currentTimeSeconds == 60) {
+          currentTimeSeconds = 0;
+          currentTimeMinutes += 1
+        }
+        currentTimeDisplay == currentTimeHours;
+        if (currentTimeMinutes < 10) {
+          currentTimeMinutes = "0" + currentTimeMinutes;
+          currentTimeDisplay += ":" + currentTimeMinutes;
+        }
+        else {
+          currentTimeDisplay += ":" + currentTimeMinutes;
+        }
+        if (currentTimeSeconds < 10) {
+          currentTimeSeconds = "0" + currentTimeSeconds;
+          currentTimeDisplay += ":" + currentTimeSeconds;
+        }
+        else {
+          currentTimeDisplay += ":" + currentTimeSeconds;
+        }
+        this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeMinutes: currentTimeMinutes});
+      },
+      1000
+    );
+  }
+
+  showTeleprompter() {
+    var oppositeState = !this.state.showTeleprompter;
+    this.setState({showTeleprompter: oppositeState});
   }
   // Use the photo as a thumbnail
   // Set a timer to simulate the record time and place the timer in the top menu bar
