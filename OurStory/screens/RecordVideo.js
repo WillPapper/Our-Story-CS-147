@@ -23,6 +23,7 @@ export default class RecordVideo extends Component {
       showTeleprompter: false,
       recording: false,
       publish: false,
+      confirmCloseShowed: false,
     };
   }
   render() {
@@ -38,6 +39,23 @@ export default class RecordVideo extends Component {
           <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
         </View>
+       }
+       {/* Stop recording button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
+       <View>
+         <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
+           <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
+         </TouchableHighlight>
+       </View>
+       {this.state.confirmCloseShowed &&
+         <View style={styles.confirmClose}>
+           <Text>Close video</Text>
+           <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
+             <Text>Yes</Text>
+           </TouchableHighlight>
+           <TouchableHighlight onPress={() => this.cancelClose()} underlayColor="#DDF8F9">
+             <Text>No</Text>
+           </TouchableHighlight>
+         </View>
        }
        {/* Recording button -- replace the text with the image and make it visible */}
         <Camera
@@ -127,6 +145,20 @@ export default class RecordVideo extends Component {
       tabIndex: 0
     });
   }
+
+  closeVideo() {
+    if (!this.state.confirmCloseShowed) {
+      this.setState({confirmCloseShowed: true});
+    }
+    else if (this.state.confirmCloseShowed) {
+      this.props.navigator.switchToTab({
+        tabIndex: 0
+      });
+    }
+  }
+  cancelClose() {
+    this.setState({confirmCloseShowed: false});
+  }
 }
 
 const styles = StyleSheet.create({
@@ -189,6 +221,9 @@ const styles = StyleSheet.create({
 
   },
   publishInput: {
+
+  },
+  closeVideo: {
 
   }
 });
