@@ -21,6 +21,7 @@ export default class RecordVideo extends Component {
       currentTimeSeconds: 0,
       currentTimeDisplay: "00:00:00",
       showTeleprompter: false,
+      recording: false,
     };
   }
   render() {
@@ -37,6 +38,7 @@ export default class RecordVideo extends Component {
           </TextInput>
         </View>
        }
+       {/* Recording button -- replace the text with the image and make it visible */}
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -45,6 +47,12 @@ export default class RecordVideo extends Component {
           aspect={Camera.constants.Aspect.fill}
           type={Camera.constants.Type.front}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+         {this.state.recording &&
+           <Image source={require("../assets/icons/Home.png")}></Image>
+         }
+         {!this.state.recording &&
+           <Image source={require("../assets/icons/Home_Active.png")}></Image>
+         }
         </Camera>
       </View>
     );
@@ -55,8 +63,10 @@ export default class RecordVideo extends Component {
       .then((data) => console.log(data))
       .catch(err => console.error(err));
     this.updateTimer();
+    this.state.recording = true;
   }
   updateTimer() {
+    // TODO: Make the timer stop when recording stops
     setInterval(
       () => {
         var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
