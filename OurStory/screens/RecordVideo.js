@@ -7,14 +7,24 @@ import {
   Text,
   TouchableHighlight,
   View,
-  TextInput
+  TextInput,
 } from 'react-native';
 import Camera from 'react-native-camera';
 
 export default class RecordVideo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTimeHours: "00",
+      currentTimeMinutes: 0,
+      currentTimeSeconds: 0,
+      currentTimeDisplay: "00:00:00",
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
+        <Text>{this.state.currentTimeDisplay}</Text>
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -36,6 +46,39 @@ export default class RecordVideo extends Component {
     this.camera.capture()
       .then((data) => console.log(data))
       .catch(err => console.error(err));
+    this.updateTimer();
+  }
+  updateTimer() {
+    setInterval(
+      () => {
+        var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
+        var currentTimeMinutes = Number.parseInt(this.state.currentTimeMinutes, 10);
+        var currentTimeHours = this.state.currentTimeHours;
+        var currentTimeDisplay = "" + this.state.currentTimeHours;
+        if (currentTimeSeconds == 60) {
+          currentTimeSeconds = 0;
+          currentTimeMinutes += 1
+        }
+        currentTimeDisplay == currentTimeHours;
+        if (currentTimeMinutes < 10) {
+          currentTimeMinutes = "0" + currentTimeMinutes;
+          currentTimeDisplay += ":" + currentTimeMinutes;
+        }
+        else {
+          currentTimeDisplay += ":" + currentTimeMinutes;
+        }
+        if (currentTimeSeconds < 10) {
+          currentTimeSeconds = "0" + currentTimeSeconds;
+          currentTimeDisplay += ":" + currentTimeSeconds;
+        }
+        else {
+          currentTimeDisplay += ":" + currentTimeSeconds;
+        }
+        console.log("currentTimeDisplay: " + currentTimeDisplay)
+        this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeDisplay: currentTimeDisplay});
+      },
+      1000
+    );
   }
   // Use the photo as a thumbnail
   // Set a timer to simulate the record time and place the timer in the top menu bar
