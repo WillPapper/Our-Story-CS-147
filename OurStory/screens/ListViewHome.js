@@ -38,7 +38,8 @@ export default class ListViewHome extends Component {
               <View style={styles.row}>
                 <Image source={{uri: rowData.image}} style={styles.rowImage}/>
                 <View style={styles.rowText}>
-                  <Text style={styles.rowTextLarge}>{rowData.title}</Text>
+
+                  <Text style={styles.rowTextTitle}>{rowData.title}</Text>
                   <View>
                     <Text style={styles.rowTextLarge}>{rowData.miles}</Text><Text style={styles.rowTextSmall}>miles</Text>
                   </View>
@@ -74,19 +75,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
+    rowTextTitle: {
+    flex: 1,
+    fontSize: 18,
+    color: '#4ECDC4',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 6,
+
+  },
   rowTextLarge: {
     flex: 1,
     fontSize: 18,
     color: '#4ECDC4',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
 
   },
   rowTextSmall: {
     fontSize: 12,
     color: '#4ECDC4',
-    marginTop: 0,
   },
 });
 
