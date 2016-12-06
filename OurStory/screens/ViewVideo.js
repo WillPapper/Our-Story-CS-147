@@ -13,7 +13,8 @@ export default class ViewVideo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showSnapInfo: false
+      showSnapInfo: false,
+      videoPaused: false
     };
   }
 
@@ -30,7 +31,7 @@ export default class ViewVideo extends Component {
                rate={1.0}                     // 0 is paused, 1 is normal.
                volume={1.0}                   // 0 is muted, 1 is normal.
                muted={false}                  // Mutes the audio entirely.
-               paused={false}                 // Pauses playback entirely.
+               paused={this.state.videoPaused}                 // Pauses playback entirely.
                resizeMode="cover"             // Fill the whole screen at aspect ratio.
                repeat={false}                  // Repeat forever.
                playInBackground={false}       // Audio continues to play when app entering background.
@@ -55,7 +56,14 @@ export default class ViewVideo extends Component {
              }
              {/* Pause button */}
              <TouchableHighlight onPress={() => this.pauseVideo()} underlayColor="#DDF8F9">
-               <Image source={require("../assets/icons/Home.png")}></Image>
+               <View>
+                 {this.state.videoPaused &&
+                   <Image source={require("../assets/icons/Home.png")}></Image>
+                 }
+                 {!this.state.videoPaused &&
+                   <Image source={require("../assets/icons/Home_Active.png")}></Image>
+                 }
+             </View>
              </TouchableHighlight>
              {/* Snap button */}
              <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
@@ -71,12 +79,16 @@ export default class ViewVideo extends Component {
     // Check this as an example: https://stackoverflow.com/questions/32347605/change-button-color-onpress-toggle-functionality-react-native
     // Code drawn from: https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react-js
     console.log("showSnapInfo " + this.state.showSnapInfo);
+    console.log(this.state)
     oppositeState = !this.state.showSnapInfo;
     this.setState({showSnapInfo: oppositeState});
+    console.log(this.state)
   }
 
   pauseVideo() {
-
+    oppositeState = !this.state.videoPaused;
+    this.setState({videoPaused: oppositeState});
+    console.log(this.state.videoPaused)
   }
 
   snap() {
