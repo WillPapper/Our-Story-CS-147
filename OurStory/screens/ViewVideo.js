@@ -45,6 +45,12 @@ export default class ViewVideo extends Component {
                onError={this.videoError}      // Callback when video cannot be loaded
                style={styles.backgroundVideo} />
            <View style={styles.snapBar}>
+             {/* Close video button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
+             <View>
+               <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
+                 <Image source={require("../assets/icons/Map.png")}></Image>
+               </TouchableHighlight>
+             </View>
              {/* Info button */}
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
                <Image source={require("../assets/icons/Home.png")}></Image>
@@ -108,6 +114,14 @@ export default class ViewVideo extends Component {
       () => {this.setState({showSnap: false})},
       200
     );
+  }
+
+  closeVideo() {
+    // this.props.navigator.pop();
+    this.props.navigator.push({
+        screen: 'ourstory.ReactionScreen',
+        title: "Reactions",
+      });
   }
 }
 
