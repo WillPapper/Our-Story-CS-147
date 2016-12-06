@@ -119,6 +119,7 @@ export default class ViewVideo extends Component {
 
   closeVideo() {
     // this.props.navigator.pop();
+    this.setState({videoPaused: true});
     this.props.navigator.push({
         screen: 'ourstory.ReactionScreen',
         title: "Reactions",
