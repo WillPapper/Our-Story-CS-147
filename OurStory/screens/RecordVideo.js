@@ -75,7 +75,7 @@ export default class RecordVideo extends Component {
           currentTimeDisplay += ":" + currentTimeSeconds;
         }
         console.log("currentTimeDisplay: " + currentTimeDisplay)
-        this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeDisplay: currentTimeDisplay});
+        this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeMinutes: currentTimeMinutes});
       },
       1000
     );
