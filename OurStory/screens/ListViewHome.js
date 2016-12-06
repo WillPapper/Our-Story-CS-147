@@ -51,6 +51,7 @@ export default class ListViewHome extends Component {
       </View>
     );
   }
+
   onPressButton(title) {
     this.props.parentNavigator.push({
       screen: 'ourstory.ViewVideo',

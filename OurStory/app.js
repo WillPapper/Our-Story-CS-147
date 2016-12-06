@@ -41,7 +41,7 @@ Navigation.startTabBasedApp({
       icon: require('./assets/icons/Record_Bottom.png'),
       selectedIcon: require('./assets/icons/Record_Bottom_Active.png'), // iOS only
       title: 'Record',
-      navigatorStyle: navigatorStyleDefinition,
+      navigatorStyle: hiddenNavigatorStyleDefinition,
     },
     {
       //label: 'Map',

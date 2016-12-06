@@ -30,7 +30,7 @@ export default class RecordVideo extends Component {
         <Text>{this.state.currentTimeDisplay}</Text>
        {/* Teleprompter button */}
        <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
-         <Image source={require("../assets/icons/Home.png")}></Image>
+         <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
@@ -46,13 +46,14 @@ export default class RecordVideo extends Component {
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
           type={Camera.constants.Type.front}>
-          <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
+
          {this.state.recording &&
-           <Image source={require("../assets/icons/Home.png")}></Image>
+           <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
          }
          {!this.state.recording &&
-           <Image source={require("../assets/icons/Home_Active.png")}></Image>
+           <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
          }
+                   <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CA]</Text>
         </Camera>
       </View>
     );
@@ -109,7 +110,12 @@ export default class RecordVideo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#293240',
+    height: 200,
+    position: 'relative',
+    top: 0,
+    paddingTop: 20,
   },
   preview: {
     flex: 1,
@@ -118,16 +124,41 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
   },
+  recordImage: {
+    position: 'absolute',
+    bottom: 20,
+
+    left: 158,
+  },
+  composeImage: {
+    position: 'relative',
+    bottom: 0,
+
+    left: 350,
+  },
   capture: {
     flex: 0,
     backgroundColor: '#fff',
-    borderRadius: 5,
+    borderRadius: 300,
     color: '#000',
     padding: 10,
-    margin: 40
+    margin: 40,
+    opacity: 0.05, //button is hidden, but is clickable
+    position: 'absolute',
+    bottom: 30,
+    left: 120,
+    fontSize: 25,
   },
+
   teleprompter: {
-    height: 40
+    height: 240,
+    color: '#4ECDC4',
+  },
+
+  teleprompterContainer: {
+
+      backgroundColor: '#293240',
+      opacity: 0.2,
   }
 });
 
