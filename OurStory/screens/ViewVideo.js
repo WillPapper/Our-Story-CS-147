@@ -14,7 +14,8 @@ export default class ViewVideo extends Component {
     super(props);
     this.state = {
       showSnapInfo: false,
-      videoPaused: false
+      videoPaused: false,
+      showSnap: false
     };
   }
 
@@ -67,7 +68,17 @@ export default class ViewVideo extends Component {
              </TouchableHighlight>
              {/* Snap button */}
              <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
-               <Image source={require("../assets/icons/Home.png")}></Image>
+               <View>
+                 {!this.state.showSnap &&
+                   <Image source={require("../assets/icons/Home.png")}></Image>
+                 }
+                 {this.state.showSnap &&
+                   <View>
+                     <Image source={require("../assets/icons/Home_Active.png")}></Image>
+                     <Text>This is some sort of snap effect!</Text>
+                   </View>
+                 }
+               </View>
              </TouchableHighlight>
           </View>
         </View>
@@ -92,7 +103,11 @@ export default class ViewVideo extends Component {
   }
 
   snap() {
-
+    this.setState({showSnap: true});
+    setTimeout(
+      () => {this.setState({showSnap: false})},
+      200
+    );
   }
 }
 
