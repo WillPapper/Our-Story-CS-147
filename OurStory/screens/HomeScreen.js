@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#29313f',
   },
   header: {
     width: 360,
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'left',
     margin: 10,
     marginTop: 80,

@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
 
   },
   rowTextLarge: {
@@ -79,12 +79,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#4ECDC4',
     alignItems: 'center',
-
+    justifyContent: 'center',
+    marginTop: 10,
 
   },
   rowTextSmall: {
     fontSize: 12,
     color: '#4ECDC4',
+    marginTop: 0,
   },
 });
 
