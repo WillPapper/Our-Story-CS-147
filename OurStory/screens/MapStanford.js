@@ -9,6 +9,7 @@ import {
 export default class MapStanford extends Component {
   render() {
     return (
+
       <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/map/image/map.png'}} style={styles.image}></Image>
     );
   }
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#293240',
   },
   header: {
     width: 360,

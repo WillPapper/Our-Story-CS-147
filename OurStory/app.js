@@ -43,7 +43,7 @@ Navigation.startTabBasedApp({
       icon: require('./assets/icons/Map.png'),
       selectedIcon: require('./assets/icons/Map_Active.png'), // iOS only
       title: 'Map',
-      navigatorStyle: navigatorStyleDefinition,
+      navigatorStyle: hiddenNavigatorStyleDefinition,
     },
   ],
 
