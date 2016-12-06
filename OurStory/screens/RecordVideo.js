@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   View,
   TextInput,
+  Image,
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -19,12 +20,23 @@ export default class RecordVideo extends Component {
       currentTimeMinutes: 0,
       currentTimeSeconds: 0,
       currentTimeDisplay: "00:00:00",
+      showTeleprompter: false,
     };
   }
   render() {
     return (
       <View style={styles.container}>
         <Text>{this.state.currentTimeDisplay}</Text>
+       {/* Teleprompter button */}
+       <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
+         <Image source={require("../assets/icons/Home.png")}></Image>
+       </TouchableHighlight>
+       {this.state.showTeleprompter &&
+        <View style={styles.teleprompterContainer}>
+          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
+          </TextInput>
+        </View>
+       }
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -34,10 +46,6 @@ export default class RecordVideo extends Component {
           type={Camera.constants.Type.front}>
           <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CAPTURE]</Text>
         </Camera>
-        <View style={styles.teleprompterContainer}>
-          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
-          </TextInput>
-        </View>
       </View>
     );
   }
@@ -74,11 +82,15 @@ export default class RecordVideo extends Component {
         else {
           currentTimeDisplay += ":" + currentTimeSeconds;
         }
-        console.log("currentTimeDisplay: " + currentTimeDisplay)
         this.setState({currentTimeDisplay: currentTimeDisplay, currentTimeSeconds: currentTimeSeconds, currentTimeMinutes: currentTimeMinutes});
       },
       1000
     );
+  }
+
+  showTeleprompter() {
+    var oppositeState = !this.state.showTeleprompter;
+    this.setState({showTeleprompter: oppositeState});
   }
   // Use the photo as a thumbnail
   // Set a timer to simulate the record time and place the timer in the top menu bar
