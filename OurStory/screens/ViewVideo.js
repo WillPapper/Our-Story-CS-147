@@ -9,6 +9,13 @@ import {
 import Video from 'react-native-video';
 
 export default class ViewVideo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSnapInfo: false
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -39,6 +46,12 @@ export default class ViewVideo extends Component {
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
                <Image source={require("../assets/icons/Home.png")}></Image>
              </TouchableHighlight>
+             {this.state.showSnapInfo &&
+               <View>
+                 <Image></Image>
+                 <Text>This is info on the snap!</Text>
+               </View>
+             }
              {/* Pause button */}
              <TouchableHighlight onPress={() => this.pauseVideo()} underlayColor="#DDF8F9">
                <Image source={require("../assets/icons/Home.png")}></Image>
@@ -55,7 +68,9 @@ export default class ViewVideo extends Component {
   showSnapInfo() {
     // Toggle visibility of the styles
     // Check this as an example: https://stackoverflow.com/questions/32347605/change-button-color-onpress-toggle-functionality-react-native
-    console.log("TEST");
+    // Code drawn from: https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react-js
+    console.log("showSnapInfo " + this.state.showSnapInfo);
+    this.state.showSnapInfo = !this.state.showSnapInfo;
   }
 
   pauseVideo() {
