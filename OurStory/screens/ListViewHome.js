@@ -64,11 +64,12 @@ export default class ListViewHome extends Component {
 const styles = StyleSheet.create({
   row: {
     flex: 0,
-    backgroundColor: '#293240'
+    backgroundColor: '#293240',
   },
   rowImage: {
     width: 360,
     height: 100,
+    opacity: 1,
   },
   rowText: {
     marginLeft: 15,

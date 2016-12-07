@@ -54,12 +54,15 @@ export default class ViewVideo extends Component {
              </View>
              {/* Info button */}
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
-               <Image source={require("../assets/icons/Snap.png")}style={styles.snapImage}></Image>
+
+               <Image source={require("../assets/icons/Info.png")}style={styles.infoImage}></Image>
              </TouchableHighlight>
              {this.state.showSnapInfo &&
-               <View>
-                 <Image></Image>
-                 <Text>This is info on the snap!</Text>
+               <View style = {styles.snapInfo}>
+
+                 <Text style = {styles.snapInfoText}>Tap to Snap</Text>
+                 <Image source={require("../assets/icons/Snap_Active.png")}style={styles.snapImageInfo}></Image>
+                 <Text style = {styles.snapInfoCaptionText}>Like an audience listening to spoken word, your snaps accumulate and result in a background noise of appreciation.</Text>
                </View>
              }
              {/* Pause button */}
@@ -77,12 +80,12 @@ export default class ViewVideo extends Component {
              <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
                <View>
                  {!this.state.showSnap &&
-                   <Image source={require("../assets/icons/Info.png")}style={styles.infoImage}></Image>
+               <Image source={require("../assets/icons/Snap.png")}style={styles.snapImage}></Image>
                  }
                  {this.state.showSnap &&
-                   <View>
-                     <Image source={require("../assets/icons/Home_Active.png")}></Image>
-                     <Text>This is some sort of snap effect!</Text>
+                   <View style = {styles.snapEffect}>
+                     <Image source={require("../assets/icons/Snap_Effect.png")}style={styles.snapEffectImage}></Image>
+                     <Text>SNAP!</Text>
                    </View>
                  }
                </View>
@@ -145,6 +148,14 @@ var styles = StyleSheet.create({
     left: 340,
   },
 
+  snapImageInfo: {
+    position: 'absolute',
+    top: 180,
+    left: 175,
+    height: 50,
+    width: 40,
+  },
+
   pauseImage: {
     position: 'absolute',
     top: -60,
@@ -156,7 +167,7 @@ var styles = StyleSheet.create({
     position: 'absolute',
     top: -60,
 
-    left: 0,
+    left: 5,
   },
 
   backgroundVideo: {
@@ -166,9 +177,56 @@ var styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+
+  snapInfo: {
+    position: 'absolute',
+    top: -560,
+    left: 0,
+    backgroundColor: '#19202A',
+    opacity: 0.85,
+    width: 400,
+    height: 500,
+  },
+
   snapBar: {
     marginTop: 560,
   },
+
+  snapEffect: {
+    position: 'absolute',
+    top: -60,
+
+    left: 0,
+  },
+
+  snapEffectImage: {
+    position: 'relative',
+    //top: -60,
+    //left: 0,
+    width: 475,
+    bottom: 0,
+  },
+
+  snapInfoText: {
+    color: '#4ECEC5',
+    opacity: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 150,
+    fontSize: 20,
+  },
+
+  snapInfoCaptionText: {
+    color: '#4ECEC5',
+    opacity: 1,
+    textAlign: 'center',
+    fontSize: 16,
+    position: 'absolute',
+    top: 250,
+    marginLeft: 15,
+    marginRight: 35,
+  },
+
   closeVideo: {
 
   }
