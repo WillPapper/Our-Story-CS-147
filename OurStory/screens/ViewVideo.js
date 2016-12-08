@@ -53,7 +53,7 @@ export default class ViewVideo extends Component {
                </TouchableHighlight>
              </View>
              {/* Info button */}
-             {!this.state.showSnap &&
+             {!this.state.showSnap && !this.state.showSnapInfo &&
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
 
                <Image source={require("../assets/icons/Info.png")}style={styles.infoImage}></Image>
