@@ -61,7 +61,12 @@ export default class ViewVideo extends Component {
              }
              {this.state.showSnapInfo &&
                <View style = {styles.snapInfo}>
-
+                 {/* Close snap info button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
+                 <View style={styles.closeVideoInfo}>
+                   <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
+                     <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
+                 </TouchableHighlight>
+                 </View>
                  <Text style = {styles.snapInfoText}>Tap to Snap</Text>
                  <Image source={require("../assets/icons/Snap_Active.png")}style={styles.snapImageInfo}></Image>
                  <Text style = {styles.snapInfoCaptionText}>Like an audience listening to spoken word, your snaps accumulate and result in a background noise of appreciation.</Text>
@@ -239,6 +244,10 @@ var styles = StyleSheet.create({
     top: 250,
     marginLeft: 15,
     marginRight: 35,
+  },
+  closeVideoInfo: {
+    top: 0,
+    position: 'relative',
   },
 
   closeVideo: {
