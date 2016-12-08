@@ -48,12 +48,12 @@ export default class RecordVideo extends Component {
        </View>
        {this.state.confirmCloseShowed &&
          <View style={styles.confirmClose}>
-           <Text>Close video</Text>
+           <Text style = {styles.confirmCloseText}>Close video</Text>
            <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
-             <Text>Yes</Text>
+             <Text style = {styles.confirmCloseText}>Yes</Text>
            </TouchableHighlight>
            <TouchableHighlight onPress={() => this.cancelClose()} underlayColor="#DDF8F9">
-             <Text>No</Text>
+             <Text style = {styles.confirmCloseText}>No</Text>
            </TouchableHighlight>
          </View>
        }
@@ -237,6 +237,16 @@ const styles = StyleSheet.create({
     width: 400,
     height: 100,
   },
+
+  confirmCloseText: {
+    color: '#19202A',
+    opacity: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 50,
+    fontSize: 20,
+  },
+
   publishButton: {
 
   },
@@ -248,7 +258,13 @@ const styles = StyleSheet.create({
   },
   closeVideo: {
 
-  }
+  },
+  confirmClose: {
+    height: 700,
+    backgroundColor: '#4ECEC5',
+    opacity: 0.85,
+  },
+
 });
 
 AppRegistry.registerComponent('RecordVideo', () => RecordVideo);
