@@ -85,7 +85,7 @@ export default class ViewVideo extends Component {
                  {this.state.showSnap &&
                    <View style = {styles.snapEffect}>
                      <Image source={require("../assets/icons/Snap_Effect.png")}style={styles.snapEffectImage}></Image>
-                     <Text>SNAP!</Text>
+                     <Text style = {styles.snapEffectText}>SNAP!</Text>
                    </View>
                  }
                </View>
@@ -205,6 +205,16 @@ var styles = StyleSheet.create({
     //left: 0,
     width: 475,
     bottom: 0,
+  },
+
+  snapEffectText: {
+    position: 'absolute',
+    top: -560,
+    left: 0,
+    backgroundColor: '#4ECEC5',
+    opacity: 0.5,
+    width: 400,
+    height: 700,
   },
 
   snapInfoText: {

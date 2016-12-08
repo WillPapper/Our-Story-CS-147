@@ -29,14 +29,14 @@ export default class RecordVideo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.currentTimeDisplay}</Text>
+        <Text style = {styles.timeStyle}>{this.state.currentTimeDisplay}</Text>
        {/* Teleprompter button */}
        <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
          <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <TextInput style={styles.teleprompter} placeholder={"This is a teleprompter example"} onChangeText={(text) => this.setState({text})}>
+          <TextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
         </View>
        }
@@ -68,17 +68,19 @@ export default class RecordVideo extends Component {
 
          {this.state.recording &&
            <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
+
          }
          {!this.state.recording &&
            <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
          }
+                   <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
                    <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CA]</Text>
         </Camera>
        {/* Publish screen */}
        {this.state.publish &&
         <View style={styles.publishContainer}>
          <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
-           <Image source={require("../assets/icons/Compose.png")}style={styles.publishButton}></Image>
+           <Image source={require("../assets/icons/X.png")}style={styles.publishButton}></Image>
          </TouchableHighlight>
           <TextInput style={styles.publishInput} placeholder={"Title"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
@@ -185,7 +187,7 @@ const styles = StyleSheet.create({
   },
   composeImage: {
     position: 'relative',
-    bottom: 0,
+    bottom: 20,
 
     left: 350,
   },
@@ -211,16 +213,37 @@ const styles = StyleSheet.create({
   teleprompterContainer: {
 
       backgroundColor: '#293240',
-      opacity: 0.2,
+      opacity: 0.85,
+  },
+
+  timeStyle: {
+      color: '#4ECEC5',
+      textAlign: 'center',
+      fontSize: 20,
+      marginTop: 10,
+  },
+
+  xImage: {
+    position: 'relative',
+    bottom: 40,
+
+    left: 5,
   },
 
   publishContainer: {
-
+    position: 'absolute',
+    bottom: 20,
+    backgroundColor: '#4ECEC5',
+    width: 400,
+    height: 100,
   },
   publishButton: {
 
   },
   publishInput: {
+    color: '#19202A',
+    position: 'relative',
+    top: 25,
 
   },
   closeVideo: {
