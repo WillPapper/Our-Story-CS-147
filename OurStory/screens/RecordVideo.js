@@ -67,14 +67,19 @@ export default class RecordVideo extends Component {
           type={Camera.constants.Type.front}>
 
          {this.state.recording &&
-           <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
+           <TouchableHighlight onPress={this.takePicture.bind(this)}>
+             <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
+
+           </TouchableHighlight>
 
          }
          {!this.state.recording &&
+            <TouchableHighlight onPress={this.takePicture.bind(this)}>
            <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
+           </TouchableHighlight>
          }
-                   <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
-                   <Text style={styles.capture} onPress={this.takePicture.bind(this)}>[CA]</Text>
+
+
         </Camera>
        {/* Publish screen */}
        {this.state.publish &&
@@ -183,7 +188,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
 
-    left: 158,
+    left: -35,
   },
   composeImage: {
     position: 'relative',

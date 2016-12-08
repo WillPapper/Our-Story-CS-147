@@ -71,6 +71,8 @@ export default class ViewVideo extends Component {
                  <Text style = {styles.snapInfoText}>Tap to Snap</Text>
                  <Image source={require("../assets/icons/Snap_Active.png")}style={styles.snapImageInfo}></Image>
                  <Text style = {styles.snapInfoCaptionText}>Like an audience listening to spoken word, your snaps accumulate and result in a background noise of appreciation.</Text>
+                 <Text style = {styles.currentSnapsText}>Current Snaps</Text>
+                 <Image source={require("../assets/icons/Snap_Effect.png")}style={styles.snapEffectInfoImage}></Image>
                </View>
              }
              {/* Pause button */}
@@ -149,7 +151,10 @@ var styles = StyleSheet.create({
     position: 'absolute',
     top: -550,
     bottom: 0,
-    left: 355,
+    left: 350,
+    overlayColor: '#4ECEC5',
+    shadowColor:   '#4ECEC5',
+    tintColor: '#4ECEC5',
   },
 
   snapImage: {
@@ -195,7 +200,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#19202A',
     opacity: 0.85,
     width: 400,
-    height: 500,
+    height: 555,
   },
 
   snapBar: {
@@ -248,9 +253,26 @@ var styles = StyleSheet.create({
   },
   xImageInfo: {
     position: 'absolute',
-    top: 100,
+    top: 10,
     bottom: 0,
-    left: 40,
+    left: 350,
+  },
+  currentSnapsText: {
+    color: '#4ECEC5',
+    opacity: 1,
+    textAlign: 'left',
+    fontSize: 16,
+    position: 'absolute',
+    top: 450,
+    marginLeft: 15,
+    marginRight: 35,
+  },
+  snapEffectInfoImage: {
+    position: 'absolute',
+    //top: -60,
+    //left: 0,
+ width: 475,
+    bottom: 0,
   },
   closeVideo: {
 
