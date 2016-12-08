@@ -53,10 +53,12 @@ export default class ViewVideo extends Component {
                </TouchableHighlight>
              </View>
              {/* Info button */}
+             {!this.state.showSnap &&
              <TouchableHighlight onPress={() => this.showSnapInfo()} underlayColor="#DDF8F9">
 
                <Image source={require("../assets/icons/Info.png")}style={styles.infoImage}></Image>
              </TouchableHighlight>
+             }
              {this.state.showSnapInfo &&
                <View style = {styles.snapInfo}>
 
@@ -66,6 +68,7 @@ export default class ViewVideo extends Component {
                </View>
              }
              {/* Pause button */}
+             {!this.state.showSnap &&
              <TouchableHighlight onPress={() => this.pauseVideo()} underlayColor="#DDF8F9">
                <View>
                  {this.state.videoPaused &&
@@ -76,6 +79,7 @@ export default class ViewVideo extends Component {
                  }
              </View>
              </TouchableHighlight>
+             }
              {/* Snap button */}
              <TouchableHighlight onPress={() => this.snap()} underlayColor="#DDF8F9">
                <View>
