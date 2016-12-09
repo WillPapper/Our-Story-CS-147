@@ -112,7 +112,6 @@ export default class RecordVideo extends Component {
     }
   }
   updateTimer() {
-    // TODO: Make the timer stop when recording stops
     setInterval(
       () => {
         var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
