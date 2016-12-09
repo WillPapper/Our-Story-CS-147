@@ -58,7 +58,6 @@ export default class ReactionScreen extends Component {
         />
       <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
       </View>
-
     );
   }
 
@@ -110,8 +109,10 @@ const styles = StyleSheet.create({
     color: '#4ECDC4',
   },
   image: {
-    position: 'absolute',
-    top: 100,
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'contain'
   },
 });
 
