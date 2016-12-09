@@ -7,7 +7,8 @@ import {
   Text,
   TouchableHighlight,
   View,
-  TextInput
+  TextInput,
+  Image
 } from 'react-native';
 import Camera from 'react-native-camera';
 

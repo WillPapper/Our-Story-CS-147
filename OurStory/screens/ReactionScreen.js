@@ -56,9 +56,19 @@ export default class ReactionScreen extends Component {
             </TouchableHighlight>
             }
         />
-      <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
+      <TouchableHighlight style={styles.image} onPress={() => this.goToReactionRecord()}>
+        <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
+      </TouchableHighlight>
       </View>
     );
+  }
+
+  goToReactionRecord() {
+    this.props.navigator.push({
+      screen: 'ourstory.RecordReaction',
+      title: 'Record Reaction',
+      navigatorStyle: viewerNavigatorStyleDefinition,
+    })
   }
 
   onPressButton(title) {
