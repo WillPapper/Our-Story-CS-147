@@ -75,7 +75,7 @@ export default class ReactionScreen extends Component {
 
   recordReaction() {
     this.props.navigator.push({
-      screen: 'ourstory.RecordVideo',
+      screen: 'ourstory.RecordVideoReaction',
       passProps: {fromReaction: true},
       navigatorStyle: viewerNavigatorStyleDefinition,
     })

@@ -26,21 +26,12 @@ export default class RecordVideoReaction extends Component {
       publish: false,
       confirmCloseShowed: false,
     };
+    this.props.navigator.setOnNavigatorEvent(console.log("navigator event "));
   }
   render() {
     return (
       <View style={styles.container}>
         <Text style = {styles.timeStyle}>{this.state.currentTimeDisplay}</Text>
-       {/* Teleprompter button */}
-       <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
-         <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
-       </TouchableHighlight>
-       {this.state.showTeleprompter &&
-        <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
-          </AutoGrowingTextInput>
-        </View>
-      }
        {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
@@ -70,18 +61,19 @@ export default class RecordVideoReaction extends Component {
 
          {this.state.recording &&
            <TouchableHighlight onPress={this.takePicture.bind(this)}>
-             <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
+             <Image source={require("../assets/icons/record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
 
            </TouchableHighlight>
 
          }
          {!this.state.recording &&
             <TouchableHighlight onPress={this.takePicture.bind(this)}>
-           <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
+           <Image source={require("../assets/icons/pause.png")}style={styles.recordImage}></Image>
            </TouchableHighlight>
          }
-
-
+         {this.props.fromReaction &&
+          <Image source={require("../assets/grid/home/faces/CornerIcon.png")} style={styles.cornerIcon}></Image>
+          }
         </Camera>
        {/* Publish screen */}
        {this.state.publish &&
@@ -103,15 +95,14 @@ export default class RecordVideoReaction extends Component {
         .then((data) => console.log(data))
         .catch(err => console.error(err));
       this.updateTimer();
-      this.setState({recording: true});
+      this.state.recording = true;
     }
     else if (this.state.recording) {
       this.setState({publish: true})
     }
   }
   updateTimer() {
-    // TODO: Make the timer stop when recording stops
-    setInterval(
+    this.state.intervalId = setInterval(
       () => {
         var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
         var currentTimeMinutes = Number.parseInt(this.state.currentTimeMinutes, 10);
@@ -150,9 +141,8 @@ export default class RecordVideoReaction extends Component {
   }
 
   publish() {
-    this.props.navigator.switchToTab({
-      tabIndex: 0
-    });
+    this.state.confirmCloseShowed = true;
+    this.closeVideo();
   }
 
   closeVideo() {
@@ -160,6 +150,18 @@ export default class RecordVideoReaction extends Component {
       this.setState({confirmCloseShowed: true});
     }
     else if (this.state.confirmCloseShowed) {
+      var defaultState = {
+        currentTimeHours: "00",
+        currentTimeMinutes: 0,
+        currentTimeSeconds: 0,
+        currentTimeDisplay: "00:00:00",
+        showTeleprompter: false,
+        recording: false,
+        publish: false,
+        confirmCloseShowed: false,
+      };
+      clearInterval(this.state.intervalId);
+      this.setState(defaultState)
       this.props.navigator.switchToTab({
         tabIndex: 0
       });
@@ -261,6 +263,12 @@ const styles = StyleSheet.create({
     position: 'relative',
     left: 300,
     bottom: -20,
+  },
+
+  cornerIcon: {
+    position: 'absolute',
+    left:20,
+    top: 20,
   },
   publishInput: {
     color: '#FFFFFF',
