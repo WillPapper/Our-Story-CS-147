@@ -142,7 +142,7 @@ export default class RecordVideoReaction extends Component {
   }
 
   publish() {
-    Alert.alert("Video submitted for publication!", "It will be approved soon.");
+    Alert.alert("Reaction submitted for publication!", "It will be approved soon.");
     this.state.confirmCloseShowed = true;
     this.closeVideo();
   }
