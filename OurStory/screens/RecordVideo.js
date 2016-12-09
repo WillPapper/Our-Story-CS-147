@@ -80,8 +80,9 @@ export default class RecordVideo extends Component {
            <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
            </TouchableHighlight>
          }
-
-  <Image source={require("../assets/grid/home/faces/CornerIcon.png")} style={styles.cornerIcon}></Image>
+         {this.props.fromReaction &&
+          <Image source={require("../assets/grid/home/faces/CornerIcon.png")} style={styles.cornerIcon}></Image>
+          }
         </Camera>
        {/* Publish screen */}
        {this.state.publish &&

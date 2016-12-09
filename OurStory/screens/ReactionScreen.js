@@ -56,8 +56,12 @@ export default class ReactionScreen extends Component {
             </TouchableHighlight>
             }
         />
+
           <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reaction_row.png'}} style={styles.imageRow}></Image>
       <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
+
+      <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image} onPress={() => this.onPressButton("View video")}></Image>
+
       </View>
     );
   }
@@ -66,6 +70,14 @@ export default class ReactionScreen extends Component {
     this.props.parentNavigator.push({
       screen: 'ourstory.ViewVideo',
       title: title,
+      navigatorStyle: viewerNavigatorStyleDefinition,
+    })
+  }
+
+  recordReaction() {
+    this.props.navigator.push({
+      screen: 'ourstory.RecordVideo',
+      fromReaction: true,
       navigatorStyle: viewerNavigatorStyleDefinition,
     })
   }
