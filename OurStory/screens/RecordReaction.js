@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
   cornerIcon: {
     position: 'absolute',
     left:20,
-    top: 20,
+    top: 90,
   },
   publishInput: {
     color: '#FFFFFF',
