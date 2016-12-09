@@ -217,14 +217,13 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontStyle: 'italic',
     width: 300,
-    backgroundColor: '#293240',
-    opacity: 0.8,
+    opacity: 0.5,
 
   },
 
   teleprompterContainer: {
       backgroundColor: '#293240',
-      opacity: 0.8,
+      opacity: 0.1,
   },
 
   timeStyle: {
