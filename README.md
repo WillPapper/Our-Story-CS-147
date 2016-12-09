@@ -1,8 +1,7 @@
 # Our-Story---CS-147
 
---------------------------
+
 INSTALLATION REQUIREMENTS:
---------------------------
 
 
 
@@ -12,7 +11,7 @@ INSTALLATION REQUIREMENTS:
 
 
 
------------------------
+
 OPERATING INSTRUCTIONS:
 
 To find a local video, users can use the home list-view or tap the pin icon in the bottom toolbar to view a map view of nearby videos. 
@@ -22,9 +21,8 @@ In order to record a video, a user can select the record icon in the bottom tool
 
 
 
-------------------------------
 LIMITATIONS IN IMPLEMENTATION:
-------------------------------
+
 For our hi-fi prototype, there are the following limitations:
 1) All video selections lead to the same sample video.
 2) We have not added the ability to publish the recorded video to the application/database, and therefore a recorded and published video will not load into the home screen.
