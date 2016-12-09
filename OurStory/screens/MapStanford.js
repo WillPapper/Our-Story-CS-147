@@ -4,16 +4,24 @@ import {
   StyleSheet,
   Image,
   View,
+  TouchableHighlight
 } from 'react-native';
 
 export default class MapStanford extends Component {
   render() {
     return (
-
-
-        <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/map/image/map.png'}} style={styles.image}></Image>
-
+          <TouchableHighlight style={styles.image} onPress={() => this.onPressButton()}>
+            <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/map/image/map.png'}} style={styles.image}></Image>
+          </TouchableHighlight>
     );
+  }
+
+  onPressButton(title) {
+      this.props.navigator.push({
+        screen: 'ourstory.ViewVideo',
+        title: "Fueling My Campus",
+        navigatorStyle: viewerNavigatorStyleDefinition,
+      })
   }
 }
 
