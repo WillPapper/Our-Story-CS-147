@@ -9,6 +9,7 @@ import {
   View,
   TextInput,
   Image,
+  Alert
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
@@ -32,6 +33,16 @@ export default class RecordVideoReaction extends Component {
     return (
       <View style={styles.container}>
         <Text style = {styles.timeStyle}>{this.state.currentTimeDisplay}</Text>
+       {/* Teleprompter button */}
+       <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
+         <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
+       </TouchableHighlight>
+       {this.state.showTeleprompter &&
+        <View style={styles.teleprompterContainer}>
+          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
+          </AutoGrowingTextInput>
+        </View>
+      }
        {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
@@ -67,7 +78,7 @@ export default class RecordVideoReaction extends Component {
            </TouchableHighlight>
 
          }
-         {!this.state.recording &&
+         {(this.state.recording == false) &&
             <TouchableHighlight onPress={this.takePicture.bind(this)}>
            <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
            </TouchableHighlight>
@@ -141,6 +152,7 @@ export default class RecordVideoReaction extends Component {
   }
 
   publish() {
+    Alert.alert("Video submitted for publication!", "It will be approved soon.");
     this.state.confirmCloseShowed = true;
     this.closeVideo();
   }
@@ -162,9 +174,6 @@ export default class RecordVideoReaction extends Component {
       };
       clearInterval(this.state.intervalId);
       this.setState(defaultState)
-      this.props.navigator.switchToTab({
-        tabIndex: 0
-      });
     }
   }
   cancelClose() {
@@ -191,8 +200,8 @@ const styles = StyleSheet.create({
   recordImage: {
     position: 'absolute',
     bottom: 20,
+    left: 160,
 
-    left: 155,
   },
   composeImage: {
     position: 'relative',
@@ -218,6 +227,7 @@ const styles = StyleSheet.create({
     height: 700,
     color: '#FFFFFF',
     fontStyle: 'italic',
+    fontFamily: 'Lato-Regular',
     width: 300,
     backgroundColor: 'transparent',
 
@@ -234,6 +244,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 20,
       marginTop: 10,
+      fontFamily: 'Montserrat-Regular',
   },
 
   xImage: {
@@ -257,6 +268,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 50,
     fontSize: 20,
+    fontFamily: 'Lato-Regular',
   },
 
   publishButton: {
@@ -268,14 +280,14 @@ const styles = StyleSheet.create({
   cornerIcon: {
     position: 'absolute',
     left:20,
-    top: 65,
-    height: 80,
+    top: 20,
   },
   publishInput: {
     color: '#FFFFFF',
     position: 'relative',
     bottom: 5,
     fontSize: 24,
+    fontFamily: 'Lato-Regular',
 
 
   },
