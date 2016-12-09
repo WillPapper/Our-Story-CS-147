@@ -112,7 +112,7 @@ export default class RecordVideo extends Component {
     }
   }
   updateTimer() {
-    setInterval(
+    this.state.intervalId = setInterval(
       () => {
         var currentTimeSeconds = Number.parseInt(this.state.currentTimeSeconds, 10) + 1;
         var currentTimeMinutes = Number.parseInt(this.state.currentTimeMinutes, 10);
@@ -171,6 +171,7 @@ export default class RecordVideo extends Component {
         publish: false,
         confirmCloseShowed: false,
       };
+      clearInterval(this.state.intervalId);
       this.setState(defaultState)
       this.props.navigator.switchToTab({
         tabIndex: 0
