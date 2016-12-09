@@ -58,7 +58,6 @@ export default class ReactionScreen extends Component {
         />
 
           <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reaction_row.png'}} style={styles.imageRow}></Image>
-      <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
 
       <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image} onPress={() => this.onPressButton("View video")}></Image>
 
@@ -122,14 +121,15 @@ const styles = StyleSheet.create({
     color: '#4ECDC4',
   },
   imageRow: {
+    flex: 1,
     position: 'absolute',
     top: 0,
   },
   image: {
-    height: 1000,
-    width: 460,
-    top: -150,
-    resizeMode: 'contain'
+    flex:1,
+    position: 'relative',
+    top: 0,
+    height: 500,
   },
 });
 
