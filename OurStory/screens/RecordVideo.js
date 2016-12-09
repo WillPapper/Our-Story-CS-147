@@ -151,9 +151,8 @@ export default class RecordVideo extends Component {
   }
 
   publish() {
-    this.props.navigator.switchToTab({
-      tabIndex: 0
-    });
+    this.state.confirmCloseShowed = true;
+    this.closeVideo();
   }
 
   closeVideo() {
