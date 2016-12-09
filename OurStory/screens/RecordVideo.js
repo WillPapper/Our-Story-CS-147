@@ -162,6 +162,17 @@ export default class RecordVideo extends Component {
       this.setState({confirmCloseShowed: true});
     }
     else if (this.state.confirmCloseShowed) {
+      var defaultState = {
+        currentTimeHours: "00",
+        currentTimeMinutes: 0,
+        currentTimeSeconds: 0,
+        currentTimeDisplay: "00:00:00",
+        showTeleprompter: false,
+        recording: false,
+        publish: false,
+        confirmCloseShowed: false,
+      };
+      this.setState(defaultState)
       this.props.navigator.switchToTab({
         tabIndex: 0
       });
