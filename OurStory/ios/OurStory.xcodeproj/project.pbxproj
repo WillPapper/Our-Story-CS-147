@@ -26,6 +26,7 @@
 		3D42FF4F1DF39377005E065E /* libRNRecorder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D42FF4C1DF3927B005E065E /* libRNRecorder.a */; };
 		3DB9FF511DF2B75400FEE9B3 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB9FF501DF2B70400FEE9B3 /* libReactNativeNavigation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		BB8A06080B4B4CF1AD0C225E /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D36D963C44504C76B154568D /* libAutoGrowTextInput.a */; };
 		D4389E93E7A523561CED9B51 /* Pods_OurStory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7D032B249CD949402D4561 /* Pods_OurStory.framework */; };
 		F9AE82674DD246FF950FA9C6 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FDD23ADBAC4C228B709AF2 /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
@@ -136,6 +137,13 @@
 			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
 			remoteInfo = RCTCamera;
 		};
+		3D4668C21DFA71E6005A5543 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14FFB1EE49244E9A9813F84B /* AutoGrowTextInput.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D81C36501CDB667F00777FB9;
+			remoteInfo = AutoGrowTextInput;
+		};
 		3DB9FF4F1DF2B70400FEE9B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3DB9FF381DF2B70400FEE9B3 /* ReactNativeNavigation.xcodeproj */;
@@ -228,6 +236,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OurStory/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OurStory/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		14FFB1EE49244E9A9813F84B /* AutoGrowTextInput.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AutoGrowTextInput.xcodeproj; path = "../node_modules/react-native-autogrow-textinput/ios/AutoGrowTextInput.xcodeproj"; sourceTree = "<group>"; };
 		3D387A931DF1627400EA7F3F /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		3D42FF311DF3927B005E065E /* RNRecorder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNRecorder.xcodeproj; path = "../node_modules/react-native-screcorder/ios/RNRecorder.xcodeproj"; sourceTree = "<group>"; };
 		3D7D032B249CD949402D4561 /* Pods_OurStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +248,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9A6A7FCADA6E4C6EB3DE9C25 /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTVideo.xcodeproj; path = "../node_modules/react-native-video/RCTVideo.xcodeproj"; sourceTree = "<group>"; };
 		B170761F7BB0E0FE75C2B653 /* Pods-OurStory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurStory.release.xcconfig"; path = "../Pods/Target Support Files/Pods-OurStory/Pods-OurStory.release.xcconfig"; sourceTree = "<group>"; };
+		D36D963C44504C76B154568D /* libAutoGrowTextInput.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAutoGrowTextInput.a; sourceTree = "<group>"; };
 		D6267ECE7A454AFA8F855648 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +280,7 @@
 				D4389E93E7A523561CED9B51 /* Pods_OurStory.framework in Frameworks */,
 				F9AE82674DD246FF950FA9C6 /* libRCTVideo.a in Frameworks */,
 				01B7B18077EF4ECA841FCE54 /* libRCTCamera.a in Frameworks */,
+				BB8A06080B4B4CF1AD0C225E /* libAutoGrowTextInput.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +429,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3D4668BF1DFA71E6005A5543 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D4668C31DFA71E6005A5543 /* libAutoGrowTextInput.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3DB9FF391DF2B70400FEE9B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +472,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				9A6A7FCADA6E4C6EB3DE9C25 /* RCTVideo.xcodeproj */,
 				D6267ECE7A454AFA8F855648 /* RCTCamera.xcodeproj */,
+				14FFB1EE49244E9A9813F84B /* AutoGrowTextInput.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -570,6 +590,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 3D4668BF1DFA71E6005A5543 /* Products */;
+					ProjectRef = 14FFB1EE49244E9A9813F84B /* AutoGrowTextInput.xcodeproj */;
+				},
 				{
 					ProductGroup = 3D387A941DF1627400EA7F3F /* Products */;
 					ProjectRef = 3D387A931DF1627400EA7F3F /* Pods.xcodeproj */;
@@ -736,6 +760,13 @@
 			fileType = archive.ar;
 			path = libRCTCamera.a;
 			remoteRef = 3D42FF911DF397B8005E065E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3D4668C31DFA71E6005A5543 /* libAutoGrowTextInput.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAutoGrowTextInput.a;
+			remoteRef = 3D4668C21DFA71E6005A5543 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DB9FF501DF2B70400FEE9B3 /* libReactNativeNavigation.a */ = {
@@ -948,6 +979,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OurStory.app/OurStory";
@@ -964,6 +996,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -988,6 +1021,7 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 				);
 				INFOPLIST_FILE = OurStory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1017,6 +1051,7 @@
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 				);
 				INFOPLIST_FILE = OurStory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1073,6 +1108,7 @@
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1115,6 +1151,7 @@
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-video",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
