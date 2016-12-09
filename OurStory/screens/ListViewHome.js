@@ -5,7 +5,7 @@ export default class ListViewHome extends Component {
   // Initialize the hardcoded data
   constructor(props) {
     super(props);
-    const images = ['https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/pexels-photo-147460.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/viewing.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/home-portrait-bw-eva.jpg', 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/pexels-photo-58020.jpg']
+    const images = [require('../assets/grid/home/faces/pexels-photo-147460.jpg'), require('../assets/grid/home/faces/viewing.jpg'), require('../assets/grid/home/faces/home-portrait-bw-eva.jpg'), require('../assets/grid/home/faces/pexels-photo-58020.jpg')]
     const titles = ['A Buddy System', 'Fueling My Campus', 'Me', 'What I Saw']
     const miles = ['0.1', '0.3', '0.4', '0.6']
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
@@ -36,7 +36,7 @@ export default class ListViewHome extends Component {
           renderRow={(rowData) =>
             <TouchableHighlight onPress={() => this.onPressButton(rowData.title)} underlayColor="#DDF8F9">
               <View style={styles.row}>
-                <Image source={{uri: rowData.image}} style={styles.rowImage}/>
+                <Image source={rowData.image} style={styles.rowImage}/>
                 <View style={styles.rowText}>
 
                   <Text style={styles.rowTextTitle}>{rowData.title}</Text>
