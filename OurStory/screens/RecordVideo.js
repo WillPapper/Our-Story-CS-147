@@ -9,9 +9,11 @@ import {
   View,
   TextInput,
   Image,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
+const dismissKeyboard = require('dismissKeyboard')
 
 export default class RecordVideo extends Component {
   constructor(props) {
@@ -37,8 +39,10 @@ export default class RecordVideo extends Component {
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
-          </AutoGrowingTextInput>
+          <TouchableWithoutFeedback onPress={()=> dismissKeyboard()}>
+            <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
+            </AutoGrowingTextInput>
+          </TouchableWithoutFeedback>
         </View>
       }
        {this.state.publish &&
