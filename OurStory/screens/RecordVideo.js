@@ -11,6 +11,7 @@ import {
   Image,
 } from 'react-native';
 import Camera from 'react-native-camera';
+import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
 
 export default class RecordVideo extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ export default class RecordVideo extends Component {
           </TextInput>
         </View>
        }
-       {/* Stop recording button -- THIS WILL NEED TO BE MOVED TO THE TOP OF THE SCREEN */}
+       {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
            <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
