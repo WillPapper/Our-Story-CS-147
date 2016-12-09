@@ -35,10 +35,12 @@ export default class RecordVideo extends Component {
        <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
          <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
        </TouchableHighlight>
+       {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
           <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
           </AutoGrowingTextInput>
         </View>
+      }
        {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
