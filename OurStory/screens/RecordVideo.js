@@ -84,7 +84,7 @@ export default class RecordVideo extends Component {
 
         </Camera>
        {/* Publish screen */}
-       {this.state.publish &&
+       {this.state.publish && !this.state.confirmCloseShowed &&
         <View style={styles.publishContainer}>
          <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
            <Image source={require("../assets/icons/Publish.png")}style={styles.publishButton}></Image>
