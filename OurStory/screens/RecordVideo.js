@@ -76,7 +76,7 @@ export default class RecordVideo extends Component {
            </TouchableHighlight>
 
          }
-         {!this.state.recording &&
+         {(this.state.recording == false) &&
             <TouchableHighlight onPress={this.takePicture.bind(this)}>
            <Image source={require("../assets/icons/pause.png")}style={styles.recordImage}></Image>
            </TouchableHighlight>
@@ -105,7 +105,7 @@ export default class RecordVideo extends Component {
         .then((data) => console.log(data))
         .catch(err => console.error(err));
       this.updateTimer();
-      this.state.recording = true;
+      this.setState({recording: true});
     }
     else if (this.state.recording) {
       this.setState({publish: true})
