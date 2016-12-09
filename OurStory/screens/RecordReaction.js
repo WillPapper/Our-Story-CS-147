@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
 
-    left: -35,
+    left: 155,
   },
   composeImage: {
     position: 'relative',
@@ -268,7 +268,8 @@ const styles = StyleSheet.create({
   cornerIcon: {
     position: 'absolute',
     left:20,
-    top: 20,
+    top: 65,
+    height: 80,
   },
   publishInput: {
     color: '#FFFFFF',
