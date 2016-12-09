@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
   },
   image: {
     position: 'relative',
-    top: -40,
-    height: 500,
+    top: 0,
+    height: 650,
   },
 });
 
