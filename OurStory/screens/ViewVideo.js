@@ -239,6 +239,7 @@ var styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 150,
     fontSize: 20,
+    fontFamily: 'Lato-Regular',
   },
 
   snapInfoCaptionText: {
@@ -250,6 +251,7 @@ var styles = StyleSheet.create({
     top: 250,
     marginLeft: 15,
     marginRight: 35,
+    fontFamily: 'Lato-Regular',
   },
   xImageInfo: {
     position: 'absolute',
@@ -266,6 +268,7 @@ var styles = StyleSheet.create({
     top: 450,
     marginLeft: 15,
     marginRight: 35,
+    fontFamily: 'Lato-Bold',
   },
   snapEffectInfoImage: {
     position: 'absolute',

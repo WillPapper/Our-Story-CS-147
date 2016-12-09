@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 18,
     color: '#4ECDC4',
+    fontFamily: 'Lato-Regular',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 6,
@@ -112,6 +113,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 18,
     color: '#4ECDC4',
+    fontFamily: 'Lato-Regular',
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -119,6 +121,7 @@ const styles = StyleSheet.create({
   rowTextSmall: {
     fontSize: 12,
     color: '#4ECDC4',
+    fontFamily: 'Lato-Regular',
   },
   imageRow: {
     flex: 1,
