@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
   recordImage: {
     position: 'absolute',
     bottom: 20,
+    left: 160,
 
-    left: -35,
   },
   composeImage: {
     position: 'relative',
