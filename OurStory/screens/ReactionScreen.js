@@ -56,8 +56,9 @@ export default class ReactionScreen extends Component {
             </TouchableHighlight>
             }
         />
-          <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/map/image/map.png'}} style={styles.image}></Image>
+          <Image source={{uri: 'https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/reactions.png'}} style={styles.image}></Image>
       </View>
+
     );
   }
 
@@ -109,10 +110,8 @@ const styles = StyleSheet.create({
     color: '#4ECDC4',
   },
   image: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'contain'
+    position: 'absolute',
+    top: 100,
   },
 });
 
