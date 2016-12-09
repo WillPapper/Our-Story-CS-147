@@ -48,7 +48,7 @@ export default class RecordVideo extends Component {
        </View>
        {this.state.confirmCloseShowed &&
          <View style={styles.confirmClose}>
-           <Text style = {styles.confirmCloseText}>Close video</Text>
+           <Text style = {styles.confirmCloseText}>Close video?</Text>
            <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
              <Text style = {styles.confirmCloseText}>Yes</Text>
            </TouchableHighlight>
@@ -85,9 +85,9 @@ export default class RecordVideo extends Component {
        {this.state.publish &&
         <View style={styles.publishContainer}>
          <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
-           <Image source={require("../assets/icons/X.png")}style={styles.publishButton}></Image>
+           <Image source={require("../assets/icons/Publish.png")}style={styles.publishButton}></Image>
          </TouchableHighlight>
-          <TextInput style={styles.publishInput} placeholder={"Title"} onChangeText={(text) => this.setState({text})}>
+          <TextInput style={styles.publishInput} placeholder={"TITLE"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
         </View>
        }
@@ -211,14 +211,18 @@ const styles = StyleSheet.create({
   },
 
   teleprompter: {
-    height: 240,
-    color: '#4ECDC4',
+    height: 700,
+    color: '#FFFFFF',
+    fontStyle: 'italic',
+    marginTop: -300,
+    width: 300,
+
   },
 
   teleprompterContainer: {
 
       backgroundColor: '#293240',
-      opacity: 0.85,
+      opacity: 0.8,
   },
 
   timeStyle: {
@@ -245,7 +249,6 @@ const styles = StyleSheet.create({
 
   confirmCloseText: {
     color: '#19202A',
-    opacity: 1,
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 50,
@@ -253,12 +256,16 @@ const styles = StyleSheet.create({
   },
 
   publishButton: {
-
+    position: 'relative',
+    left: 300,
+    bottom: -20,
   },
   publishInput: {
-    color: '#19202A',
+    color: '#FFFFFF',
     position: 'relative',
-    top: 25,
+    bottom: 5,
+    fontSize: 24,
+
 
   },
   closeVideo: {
@@ -267,7 +274,7 @@ const styles = StyleSheet.create({
   confirmClose: {
     height: 700,
     backgroundColor: '#4ECEC5',
-    opacity: 0.85,
+    opacity: 0.50,
   },
 
 });
