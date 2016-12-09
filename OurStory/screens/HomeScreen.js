@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     margin: 10,
     marginTop: 80,
     color: '#4ECDC4',
+    fontFamily: 'Montserrat-ExtraBold'
   },
   instructions: {
     textAlign: 'center',

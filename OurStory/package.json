@@ -25,5 +25,11 @@
     "babel-preset-react-native": "1.9.0",
     "jest": "17.0.3",
     "react-test-renderer": "15.4.1"
+  },
+  "rnpm": {
+    "assets": [
+      "assets/fonts/lato",
+      "assets/fonts/montserrat/"
+      ]
   }
 }
