@@ -3,9 +3,9 @@
 -
 INSTALLATION REQUIREMENTS:
 -
-1. Download this repository
-2. Run `npm install`
-3. Test on iOS simulator or on device
+1. From the command line, run `git clone https://github.com/wpapper/Our-Story-CS-147.git`
+2. Run `cd Our-Story-CS-147/Ourstory; npm install;`
+3. Open `ios/OurStory.xcodeproj` and press Run to test on iOS simulator or on device
 
 
 
