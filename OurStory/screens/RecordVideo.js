@@ -9,6 +9,7 @@ import {
   View,
   TextInput,
   Image,
+  Alert
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
@@ -151,6 +152,7 @@ export default class RecordVideo extends Component {
   }
 
   publish() {
+    Alert.alert("Video submitted for publication!", "It will be approved soon.");
     this.state.confirmCloseShowed = true;
     this.closeVideo();
   }
