@@ -9,11 +9,9 @@ import {
   View,
   TextInput,
   Image,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
-const dismissKeyboard = require('dismissKeyboard')
 
 export default class RecordVideo extends Component {
   constructor(props) {
@@ -39,10 +37,8 @@ export default class RecordVideo extends Component {
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <TouchableWithoutFeedback onPress={()=> dismissKeyboard()}>
-            <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
-            </AutoGrowingTextInput>
-          </TouchableWithoutFeedback>
+          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
+          </AutoGrowingTextInput>
         </View>
       }
        {this.state.publish &&
@@ -85,15 +81,15 @@ export default class RecordVideo extends Component {
            </TouchableHighlight>
          }
 
-
+  <Image source={require("../assets/grid/home/faces/CornerIcon.png")} style={styles.cornerIcon}></Image>
         </Camera>
        {/* Publish screen */}
-       {this.state.publish && !this.state.confirmCloseShowed &&
+       {this.state.publish &&
         <View style={styles.publishContainer}>
          <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
            <Image source={require("../assets/icons/Publish.png")}style={styles.publishButton}></Image>
          </TouchableHighlight>
-          <TextInput style={styles.publishInput} placeholder={"TITLE"} onChangeText={(text) => this.setState({text})}>
+          <TextInput style={styles.publishInput} placeholder={"Story from Stanford, CA"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
         </View>
        }
@@ -265,6 +261,12 @@ const styles = StyleSheet.create({
     position: 'relative',
     left: 300,
     bottom: -20,
+  },
+
+  cornerIcon: {
+    position: 'absolute',
+    left:20,
+    top: 20,
   },
   publishInput: {
     color: '#FFFFFF',
