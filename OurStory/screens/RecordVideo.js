@@ -172,9 +172,6 @@ export default class RecordVideo extends Component {
       };
       clearInterval(this.state.intervalId);
       this.setState(defaultState)
-      this.props.navigator.switchToTab({
-        tabIndex: 0
-      });
     }
   }
   cancelClose() {
