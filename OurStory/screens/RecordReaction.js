@@ -58,6 +58,7 @@ export default class RecordVideoReaction extends Component {
           style={styles.preview}
           aspect={Camera.constants.Aspect.fill}
           type={Camera.constants.Type.front}>
+        </Camera>
 
          {this.state.recording &&
            <TouchableHighlight onPress={this.takePicture.bind(this)}>
@@ -74,7 +75,6 @@ export default class RecordVideoReaction extends Component {
          {this.props.fromReaction &&
           <Image source={require("../assets/grid/home/faces/CornerIcon.png")} style={styles.cornerIcon}></Image>
           }
-        </Camera>
        {/* Publish screen */}
        {this.state.publish &&
         <View style={styles.publishContainer}>
