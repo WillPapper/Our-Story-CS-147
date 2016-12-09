@@ -14,7 +14,7 @@ INSTALLATION REQUIREMENTS:
 
 -----------------------
 OPERATING INSTRUCTIONS:
------------------------
+
 To find a local video, users can use the home list-view or tap the pin icon in the bottom toolbar to view a map view of nearby videos. 
 Upon selecting the video, the user can pause or exit. The user can also tap the snapping icon in the bottom right corner to "snap" to show support and appreciation. By selecting the i icon on the bottom left, a user can view the snap info, a display of snap frequencies across the video recording. Upon finishing the video, the user can leave a short reaction response video with the record screen option that follows.
 
@@ -26,6 +26,6 @@ In order to record a video, a user can select the record icon in the bottom tool
 LIMITATIONS IN IMPLEMENTATION:
 ------------------------------
 For our hi-fi prototype, there are the following limitations:
-1) All video selections lead to the same sample video
+1) All video selections lead to the same sample video.
 2) We have not added the ability to publish the recorded video to the application/database, and therefore a recorded and published video will not load into the home screen.
 3) The map view is currently static, and not based on the true location of the user. The starting view is static, and users cannot view other surrounding areas.
