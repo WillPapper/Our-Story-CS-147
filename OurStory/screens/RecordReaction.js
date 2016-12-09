@@ -33,16 +33,6 @@ export default class RecordVideoReaction extends Component {
     return (
       <View style={styles.container}>
         <Text style = {styles.timeStyle}>{this.state.currentTimeDisplay}</Text>
-       {/* Teleprompter button */}
-       <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
-         <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
-       </TouchableHighlight>
-       {this.state.showTeleprompter &&
-        <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
-          </AutoGrowingTextInput>
-        </View>
-      }
        {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
@@ -92,7 +82,7 @@ export default class RecordVideoReaction extends Component {
          <TouchableHighlight onPress={() => this.publish()} underlayColor="#DDF8F9">
            <Image source={require("../assets/icons/Publish.png")}style={styles.publishButton}></Image>
          </TouchableHighlight>
-          <TextInput style={styles.publishInput} placeholder={"Story from Stanford, CA"} onChangeText={(text) => this.setState({text})}>
+          <TextInput style={styles.publishInput} placeholder={"Reaction from Stanford, CA"} onChangeText={(text) => this.setState({text})}>
           </TextInput>
         </View>
        }
@@ -243,7 +233,7 @@ const styles = StyleSheet.create({
       color: '#4ECEC5',
       textAlign: 'center',
       fontSize: 20,
-      marginTop: 10,
+      marginBottom: 10,
       fontFamily: 'Montserrat-Regular',
   },
 
