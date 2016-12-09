@@ -178,7 +178,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 0,
     paddingTop: 20,
-    opacity: 0.5
   },
   preview: {
     flex: 1,
@@ -218,13 +217,14 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontStyle: 'italic',
     width: 300,
-    opacity: 0.5,
+    backgroundColor: 'transparent',
+
 
   },
 
   teleprompterContainer: {
       backgroundColor: '#293240',
-      opacity: 0.1,
+    backgroundColor: 'transparent',
   },
 
   timeStyle: {
