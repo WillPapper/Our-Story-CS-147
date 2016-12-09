@@ -227,6 +227,7 @@ const styles = StyleSheet.create({
     height: 700,
     color: '#FFFFFF',
     fontStyle: 'italic',
+    fontFamily: 'Lato-Regular',
     width: 300,
     backgroundColor: 'transparent',
 
@@ -243,6 +244,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontSize: 20,
       marginTop: 10,
+      fontFamily: 'Montserrat-Regular',
   },
 
   xImage: {
@@ -266,6 +268,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 50,
     fontSize: 20,
+    fontFamily: 'Lato-Regular',
   },
 
   publishButton: {
@@ -284,6 +287,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     bottom: 5,
     fontSize: 24,
+    fontFamily: 'Lato-Regular',
 
 
   },
