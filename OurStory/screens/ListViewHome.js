@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 6,
+    fontFamily: 'Lato-Regular'
 
   },
   rowTextLarge: {
@@ -93,11 +94,13 @@ const styles = StyleSheet.create({
     color: '#DDF8F9',
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'Lato-Regular'
 
   },
   rowTextSmall: {
     fontSize: 12,
     color: '#DDF8F9',
+    fontFamily: 'Lato-Regular'
   },
 });
 
