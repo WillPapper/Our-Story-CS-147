@@ -50,12 +50,12 @@ export default class RecordVideo extends Component {
        }
        {this.state.confirmCloseShowed &&
          <View style={styles.confirmClose}>
-           <Text style = {styles.confirmCloseText}>Close video?</Text>
+           <Text style = {styles.confirmCloseText}>Are you sure you want to delete this video?</Text>
            <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
-             <Text style = {styles.confirmCloseText}>Yes</Text>
+             <Text style = {styles.confirmCloseText}>YES</Text>
            </TouchableHighlight>
            <TouchableHighlight onPress={() => this.cancelClose()} underlayColor="#DDF8F9">
-             <Text style = {styles.confirmCloseText}>No</Text>
+             <Text style = {styles.confirmCloseText}>NO</Text>
            </TouchableHighlight>
          </View>
        }
@@ -243,14 +243,14 @@ const styles = StyleSheet.create({
 
   publishContainer: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 0,
     backgroundColor: '#4ECEC5',
     width: 400,
     height: 100,
   },
 
   confirmCloseText: {
-    color: '#19202A',
+    color: '#4ECEC5',
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 50,
@@ -275,8 +275,8 @@ const styles = StyleSheet.create({
   },
   confirmClose: {
     height: 700,
-    backgroundColor: '#4ECEC5',
-    opacity: 0.50,
+    backgroundColor: '#293240',
+    opacity: 0.6,
   },
 
 });
