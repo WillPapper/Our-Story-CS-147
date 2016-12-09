@@ -26,6 +26,7 @@ export default class RecordVideo extends Component {
       publish: false,
       confirmCloseShowed: false,
     };
+    this.props.navigator.setOnNavigatorEvent(console.log("navigator event "));
   }
   render() {
     return (

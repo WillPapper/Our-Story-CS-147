@@ -33,8 +33,6 @@ export default class ReactionScreen extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(rows)
     };
-    console.log("ListView navigator")
-    console.log(this.props.parentNavigator)
   }
   render() {
     return (
