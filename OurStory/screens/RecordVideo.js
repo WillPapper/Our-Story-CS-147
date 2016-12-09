@@ -35,18 +35,17 @@ export default class RecordVideo extends Component {
        <TouchableHighlight onPress={() => this.showTeleprompter()} underlayColor="#DDF8F9">
          <Image source={require("../assets/icons/Compose.png")}style={styles.composeImage}></Image>
        </TouchableHighlight>
-       {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <TextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
-          </TextInput>
+          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
+          </AutoGrowingTextInput>
         </View>
-       }
        {this.state.publish &&
        <View>
          <TouchableHighlight onPress={() => this.closeVideo()} underlayColor="#DDF8F9">
            <Image source={require("../assets/icons/X.png")} style={styles.xImage}></Image>
          </TouchableHighlight>
        </View>
+       }
        {this.state.confirmCloseShowed &&
          <View style={styles.confirmClose}>
            <Text style = {styles.confirmCloseText}>Close video?</Text>
@@ -215,13 +214,13 @@ const styles = StyleSheet.create({
     height: 700,
     color: '#FFFFFF',
     fontStyle: 'italic',
-    marginTop: -300,
     width: 300,
+    backgroundColor: '#293240',
+    opacity: 0.8,
 
   },
 
   teleprompterContainer: {
-
       backgroundColor: '#293240',
       opacity: 0.8,
   },
