@@ -2,11 +2,10 @@
 
 -
 INSTALLATION REQUIREMENTS:
-
+-
 1. Download this repository
 2. Run `npm install`
 3. Test on iOS simulator or on device
--
 
 
 
