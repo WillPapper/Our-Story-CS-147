@@ -62,14 +62,14 @@ export default class RecordVideoReaction extends Component {
 
          {this.state.recording &&
            <TouchableHighlight onPress={this.takePicture.bind(this)}>
-             <Image source={require("../assets/icons/record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
+             <Image source={require("../assets/icons/Record.png")}style={styles.recordImage} onPress={this.takePicture.bind(this)}></Image>
 
            </TouchableHighlight>
 
          }
          {!this.state.recording &&
             <TouchableHighlight onPress={this.takePicture.bind(this)}>
-           <Image source={require("../assets/icons/pause.png")}style={styles.recordImage}></Image>
+           <Image source={require("../assets/icons/Pause.png")}style={styles.recordImage}></Image>
            </TouchableHighlight>
          }
          {this.props.fromReaction &&
