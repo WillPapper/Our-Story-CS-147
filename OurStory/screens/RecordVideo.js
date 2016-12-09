@@ -178,6 +178,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 0,
     paddingTop: 20,
+    opacity: 0.5
   },
   preview: {
     flex: 1,
