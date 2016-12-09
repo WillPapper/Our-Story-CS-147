@@ -5,65 +5,109 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, ListView, Text, View, StyleSheet, Image, TouchableHighlight, Alert } from 'react-native';
 import ListViewHome from './ListViewHome';
 import MapStanford from './MapStanford';
 
 export default class ReactionScreen extends Component {
+  // Initialize the hardcoded data
+  constructor(props) {
+    super(props);
+    const images = ['https://raw.githubusercontent.com/wpapper/Our-Story-CS-147/master/OurStory/assets/grid/home/faces/viewing.jpg']
+    const titles = ['Fueling My Campus']
+    const miles = ['0.1']
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2,
+      sectionHeaderHasChanged : (s1, s2) => s1 !== s2,
+      images,
+      titles,
+      miles
+    });
+    let rows = [];
+    for (let i = 0; i < images.length; i++) {
+      rows.push({
+        image: images[i],
+        title: titles[i],
+        miles: miles[i],
+      });
+    }
+    this.state = {
+      dataSource: ds.cloneWithRows(rows)
+    };
+    console.log("ListView navigator")
+    console.log(this.props.parentNavigator)
+  }
   render() {
-    console.log("home navigator")
-    console.log(this.props.navigator)
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>
-            Stories
-          </Text>
-        </View>
-        <View style={styles.body}>
-          <ListViewHome
-            parentNavigator={this.props.navigator}
-            >
-          </ListViewHome>
-        </View>
+      <View style={{flex: 1, paddingTop: 0}}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) =>
+            <TouchableHighlight onPress={() => this.onPressButton(rowData.title)} underlayColor="#DDF8F9">
+              <View style={styles.row}>
+                <Image source={{uri: rowData.image}} style={styles.rowImage}/>
+                <View style={styles.rowText}>
+
+                  <Text style={styles.rowTextTitle}>{rowData.title}</Text>
+                  <View>
+                    <Text style={styles.rowTextLarge}>{rowData.miles}</Text><Text style={styles.rowTextSmall}>miles</Text>
+                  </View>
+                </View>
+              </View>
+            </TouchableHighlight>
+            }
+        />
       </View>
     );
+  }
+
+  onPressButton(title) {
+    this.props.parentNavigator.push({
+      screen: 'ourstory.ViewVideo',
+      title: title,
+      navigatorStyle: viewerNavigatorStyleDefinition,
+    })
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  header: {
-    width: 360,
-    marginTop: 0,
+  row: {
     flex: 0,
     backgroundColor: '#293240',
   },
-  headerText: {
-    fontSize: 20,
-    textAlign: 'left',
-    margin: 10,
-    marginTop: 80,
+  rowImage: {
+    width: 360,
+    height: 100,
+    opacity: 1,
+  },
+  rowText: {
+    marginLeft: 15,
+    marginRight: 15,
+    flexDirection: 'row',
+    justifyContent: 'center',
+
+  },
+    rowTextTitle: {
+    flex: 1,
+    fontSize: 18,
+    color: '#4ECDC4',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 6,
+
+  },
+  rowTextLarge: {
+    flex: 1,
+    fontSize: 18,
+    color: '#4ECDC4',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+  rowTextSmall: {
+    fontSize: 12,
     color: '#4ECDC4',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  tempMargin: {
-    marginTop: 200,
-  }
 });
+
 
 AppRegistry.registerComponent('ReactionScreen', () => ReactionScreen);
