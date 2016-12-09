@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     rowTextTitle: {
     flex: 1,
     fontSize: 18,
-    color: '#4ECDC4',
+    color: '#DDF8F9',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 6,
@@ -90,14 +90,14 @@ const styles = StyleSheet.create({
   rowTextLarge: {
     flex: 1,
     fontSize: 18,
-    color: '#4ECDC4',
+    color: '#DDF8F9',
     alignItems: 'center',
     justifyContent: 'center',
 
   },
   rowTextSmall: {
     fontSize: 12,
-    color: '#4ECDC4',
+    color: '#DDF8F9',
   },
 });
 
