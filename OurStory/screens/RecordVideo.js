@@ -40,7 +40,7 @@ export default class RecordVideo extends Component {
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})} onPress={() => this.teleprompterKeyboard()>
+          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})} onPress={() => this.teleprompterKeyboard()}>
           </AutoGrowingTextInput>
         </View>
       }
