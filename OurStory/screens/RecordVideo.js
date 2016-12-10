@@ -27,6 +27,7 @@ export default class RecordVideo extends Component {
       recording: false,
       publish: false,
       confirmCloseShowed: false,
+      teleprompterText: "Start typing to use the teleprompter"
     };
     this.props.navigator.setOnNavigatorEvent(console.log("navigator event "));
   }
@@ -40,7 +41,7 @@ export default class RecordVideo extends Component {
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})} onPress={() => this.teleprompterKeyboard()}>
+          <AutoGrowingTextInput style={styles.teleprompter} value={this.state.teleprompterText} onChangeText={(text) => this.setState({teleprompterText: text})} onPress={() => this.teleprompterKeyboard()}>
           </AutoGrowingTextInput>
         </View>
       }
