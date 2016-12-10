@@ -236,6 +236,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     fontFamily: 'Lato-Regular',
     width: 300,
+    fontSize: 16,
     backgroundColor: 'transparent',
 
 
