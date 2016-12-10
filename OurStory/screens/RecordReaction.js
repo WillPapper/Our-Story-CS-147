@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
 
   teleprompter: {
     height: 700,
-    color: '#FFFFFF',
+    color: '#DDF8F9',
     fontStyle: 'italic',
     fontFamily: 'Lato-Regular',
     width: 300,

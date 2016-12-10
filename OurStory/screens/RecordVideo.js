@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 import {AutoGrowingTextInput} from 'react-native-autogrow-textinput';
+import dismissKeyboard from 'react-native-dismiss-keyboard';
 
 export default class RecordVideo extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class RecordVideo extends Component {
        </TouchableHighlight>
        {this.state.showTeleprompter &&
         <View style={styles.teleprompterContainer}>
-          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})}>
+          <AutoGrowingTextInput style={styles.teleprompter} placeholder={"Start typing to use the teleprompter"} onChangeText={(text) => this.setState({text})} onPress={() => this.teleprompterKeyboard()>
           </AutoGrowingTextInput>
         </View>
       }
@@ -150,6 +151,9 @@ export default class RecordVideo extends Component {
     var oppositeState = !this.state.showTeleprompter;
     this.setState({showTeleprompter: oppositeState});
   }
+  teleprompterKeyboard() {
+    dismissKeyboard();
+  }
 
   publish() {
     Alert.alert("Video submitted for publication!", "It will be approved soon.");
@@ -225,7 +229,7 @@ const styles = StyleSheet.create({
 
   teleprompter: {
     height: 700,
-    color: '#FFFFFF',
+    color: '#DDF8F9',
     fontStyle: 'italic',
     fontFamily: 'Lato-Regular',
     width: 300,
