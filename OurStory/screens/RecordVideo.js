@@ -106,9 +106,9 @@ export default class RecordVideo extends Component {
 
   takePicture() {
     if (!this.state.recording) {
-      this.camera.capture()
-        .then((data) => console.log(data))
-        .catch(err => console.error(err));
+//      this.camera.capture()
+//        .then((data) => console.log(data))
+//        .catch(err => console.error(err));
       this.updateTimer();
       this.setState({recording: true});
     }
