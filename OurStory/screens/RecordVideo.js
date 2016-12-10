@@ -27,7 +27,7 @@ export default class RecordVideo extends Component {
       recording: false,
       publish: false,
       confirmCloseShowed: false,
-      teleprompterText: "Start typing to use the teleprompter"
+      teleprompterText: "Hi, I'm {my name} from {my hometown}, and this is my story."
     };
     this.props.navigator.setOnNavigatorEvent(console.log("navigator event "));
   }
