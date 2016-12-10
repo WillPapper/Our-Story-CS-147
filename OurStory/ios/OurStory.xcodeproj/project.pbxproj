@@ -1147,7 +1147,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs147.OurStory;
+				PRODUCT_BUNDLE_IDENTIFIER = me.papper.ourstory;
 				PRODUCT_NAME = OurStory;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1178,7 +1178,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs147.OurStory;
+				PRODUCT_BUNDLE_IDENTIFIER = me.papper.ourstory;
 				PRODUCT_NAME = OurStory;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
