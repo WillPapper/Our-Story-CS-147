@@ -64,6 +64,7 @@ export default class RecordVideo extends Component {
          </View>
        }
        {/* Recording button -- replace the text with the image and make it visible */}
+        <TouchableHighlight style={styles.preview} onPress={() => this.teleprompterKeyboard()}>
         <Camera
           ref={(cam) => {
             this.camera = cam;
@@ -72,6 +73,7 @@ export default class RecordVideo extends Component {
           aspect={Camera.constants.Aspect.fill}
           type={Camera.constants.Type.front}>
         </Camera>
+        </TouchableHighlight>
 
          {this.state.recording &&
            <TouchableHighlight onPress={this.takePicture.bind(this)}>
